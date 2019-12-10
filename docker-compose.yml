@@ -1,0 +1,27 @@
+# docker-compose.yml
+version: '3'
+
+services:
+  nginx:
+    build: 
+      context: ./nginx/
+      args:
+        APP_ENV: dev
+    image: loanpetit_nginx:latest
+    container_name: loanpetit_nginx
+    restart: always
+    depends_on:
+      - flutter
+    ports:
+      - "80:80"
+
+  flutter:
+    build: 
+      context: ./flutter/
+      args:
+        FLUTTER_VERSION: v1.13.0
+    image: loanpetit_flutter:latest
+    container_name: loanpetit_flutter
+    restart: always
+    expose:
+      - "80"

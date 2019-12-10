@@ -1,0 +1,6 @@
+- name: Deploy the portfolio
+  hosts: portfolio
+  become: true
+  roles:
+    - base
+    - docker
