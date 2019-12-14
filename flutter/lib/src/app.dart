@@ -11,18 +11,18 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     final colorScheme = ColorScheme(
       brightness: Brightness.dark,
-      primary: Color.fromRGBO(216, 54, 54, 1),
-      primaryVariant: Color.fromRGBO(216, 54, 54, 1),
-      secondary: Color.fromRGBO(216, 54, 54, 1),
-      secondaryVariant: Color.fromRGBO(216, 54, 54, 1),
-      surface: Color.fromRGBO(244, 244, 244, 1),
-      background: Color.fromRGBO(244, 244, 244, 1),
+      primary: Color.fromRGBO(247, 67, 64, 1),
+      primaryVariant: Color.fromRGBO(247, 67, 64, 1),
+      secondary: Color.fromRGBO(247, 67, 64, 1),
+      secondaryVariant: Color.fromRGBO(247, 67, 64, 1),
+      surface: Color.fromRGBO(237, 242, 244, 1),
+      background: Color.fromRGBO(237, 242, 244, 1),
       error: Colors.red,
-      onPrimary: Color.fromRGBO(244, 244, 244, 1),
-      onSecondary: Color.fromRGBO(33, 33, 33, 1),
-      onSurface: Color.fromRGBO(244, 244, 244, 1),
-      onBackground: Color.fromRGBO(33, 33, 33, 1),
-      onError: Color.fromRGBO(244, 244, 244, 1),
+      onPrimary: Color.fromRGBO(237, 242, 244, 1),
+      onSecondary: Color.fromRGBO(237, 242, 244, 1),
+      onSurface: Color.fromRGBO(237, 242, 244, 1),
+      onBackground: Color.fromRGBO(56, 56, 56, 1),
+      onError: Color.fromRGBO(237, 242, 244, 1),
     );
 
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -49,7 +49,8 @@ class App extends StatelessWidget {
         scaffoldBackgroundColor: colorScheme.background,
         dialogBackgroundColor: colorScheme.background,
         backgroundColor: colorScheme.background,
-        appBarTheme: AppBarTheme(color: colorScheme.background, brightness: Brightness.dark),
+        appBarTheme: AppBarTheme(
+            color: colorScheme.background, brightness: Brightness.dark),
         primaryIconTheme: IconThemeData(color: colorScheme.onBackground),
         colorScheme: colorScheme,
         fontFamily: 'OpenSans',

@@ -35,7 +35,7 @@ class _AppScaffoldState extends State<AppScaffold> {
           builder: (context, constraints) {
             return Container(
               margin: (constraints.maxWidth > 600)
-                  ? EdgeInsets.symmetric(horizontal: constraints.maxWidth / 4)
+                  ? EdgeInsets.symmetric(horizontal: constraints.maxWidth / 6)
                   : null,
               child: widget.body,
               alignment: Alignment.topCenter,
@@ -53,7 +53,7 @@ class _AppScaffoldState extends State<AppScaffold> {
     return AppBar(
       title: Container(
         margin: EdgeInsets.only(
-          left: screenWidth > 600 ? screenWidth / 5 : 0.0,
+          left: screenWidth > 600 ? screenWidth / 8 : 0.0,
         ),
         child: RichText(
           text: TextSpan(
