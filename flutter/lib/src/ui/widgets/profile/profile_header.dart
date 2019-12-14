@@ -122,7 +122,7 @@ class ProfileHeader extends StatelessWidget {
           ),
           TextSpan(
               text:
-                  ' passionate about innovative, disruptive and challenging technological projects.')
+                  ' passionate about innovative, disruptive and ambitious projects.')
         ],
       ),
     );

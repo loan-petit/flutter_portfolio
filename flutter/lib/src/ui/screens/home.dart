@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'package:portfolio/src/ui/widgets/profile/profile_additional_informations.dart';
 import 'package:portfolio/src/ui/widgets/profile/profile_header.dart';
 import 'package:portfolio/src/ui/widgets/shared/scaffold.dart';
 
@@ -15,6 +16,7 @@ class HomeScreen extends StatelessWidget {
         scrollDirection: Axis.vertical,
         children: <Widget>[
           _buildFirstPage(context),
+          ProfileAdditionalInformations(),
         ],
       ),
     );
@@ -44,7 +46,7 @@ class HomeScreen extends StatelessWidget {
         children: <Widget>[
           if (screenWidth > 400)
             Text(
-              "Continue",
+              "Want to know more ? Scroll down.",
               style:
                   textStyle.apply(color: Theme.of(context).colorScheme.primary),
             ),
