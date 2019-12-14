@@ -29,7 +29,7 @@ flutter:
   uses-material-design: true
 
   assets:
-    - ./assets/png/profile_alpha.png
+    - ./assets/png/profile.png
 
   fonts:
     - family: OpenSans
