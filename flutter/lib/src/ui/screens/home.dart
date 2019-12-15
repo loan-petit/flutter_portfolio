@@ -23,6 +23,11 @@ class HomeScreen extends StatelessWidget {
   }
 
   Widget _buildFirstPage(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    TextStyle textStyle = (screenWidth < 600)
+        ? Theme.of(context).textTheme.subhead
+        : Theme.of(context).textTheme.title;
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -30,40 +35,31 @@ class HomeScreen extends StatelessWidget {
         Expanded(
           child: ProfileHeader(),
         ),
-        _buildBottomButton(context),
-      ],
-    );
-  }
-
-  Widget _buildBottomButton(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    TextStyle textStyle = (screenWidth < 600)
-        ? Theme.of(context).textTheme.subhead
-        : Theme.of(context).textTheme.title;
-
-    return FlatButton(
-      child: Column(
-        children: <Widget>[
-          if (screenWidth > 400)
-            Text(
-              "Want to know more ? Scroll down.",
-              style:
-                  textStyle.apply(color: Theme.of(context).colorScheme.primary),
-            ),
-          Icon(
-            Icons.expand_more,
-            color: Theme.of(context).colorScheme.primary,
-            size: (screenWidth < 600) ? 30.0 : 50.0,
+        FlatButton(
+          child: Column(
+            children: <Widget>[
+              if (screenWidth > 400)
+                Text(
+                  "Want to know more ? Scroll down.",
+                  style: textStyle.apply(
+                      color: Theme.of(context).colorScheme.primary),
+                ),
+              Icon(
+                Icons.expand_more,
+                color: Theme.of(context).colorScheme.primary,
+                size: (screenWidth < 600) ? 30.0 : 50.0,
+              ),
+            ],
           ),
-        ],
-      ),
-      onPressed: () {
-        _pageController.animateToPage(
-          0,
-          duration: Duration(milliseconds: 300),
-          curve: Curves.linear,
-        );
-      },
+          onPressed: () {
+            _pageController.animateToPage(
+              0,
+              duration: Duration(milliseconds: 300),
+              curve: Curves.linear,
+            );
+          },
+        ),
+      ],
     );
   }
 }
