@@ -1,5 +1,6 @@
-import 'package:clipboard_manager/clipboard_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
 import 'package:url_launcher/url_launcher.dart';
 
 /// Page with contact informations and social medias.
@@ -138,13 +139,12 @@ class ProfileAdditionalInformations extends StatelessWidget {
               color: Theme.of(context).colorScheme.onPrimary,
             ),
           ),
-          onPressed: () {
-            ClipboardManager.copyToClipBoard(email).then((result) {
-              final snackBar = SnackBar(
-                content: Text('Email copied to clipboard'),
-              );
-              Scaffold.of(context).showSnackBar(snackBar);
-            });
+          onPressed: () async {
+            await Clipboard.setData(new ClipboardData(text: email));
+            final snackBar = SnackBar(
+              content: Text('Email copied to clipboard', textAlign: TextAlign.center,),
+            );
+            Scaffold.of(context).showSnackBar(snackBar);
           },
         ),
       ],

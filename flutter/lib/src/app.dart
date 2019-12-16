@@ -27,8 +27,8 @@ class App extends StatelessWidget {
 
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       statusBarColor: colorScheme.background,
-      statusBarBrightness: Brightness.dark,
-      statusBarIconBrightness: Brightness.light,
+      statusBarBrightness: Brightness.light,
+      statusBarIconBrightness: Brightness.dark,
     ));
 
     return MaterialApp(
@@ -39,7 +39,7 @@ class App extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        brightness: Brightness.dark,
+        brightness: Brightness.light,
         primaryColor: colorScheme.primary,
         primaryColorBrightness: Brightness.light,
         accentColor: colorScheme.secondary,
@@ -47,10 +47,11 @@ class App extends StatelessWidget {
         cardColor: colorScheme.surface,
         canvasColor: colorScheme.background,
         scaffoldBackgroundColor: colorScheme.background,
+        snackBarTheme: SnackBarThemeData(backgroundColor: colorScheme.onBackground),
         dialogBackgroundColor: colorScheme.background,
         backgroundColor: colorScheme.background,
         appBarTheme: AppBarTheme(
-            color: colorScheme.background, brightness: Brightness.dark),
+            color: colorScheme.background, brightness: Brightness.light),
         primaryIconTheme: IconThemeData(color: colorScheme.onBackground),
         colorScheme: colorScheme,
         fontFamily: 'OpenSans',
