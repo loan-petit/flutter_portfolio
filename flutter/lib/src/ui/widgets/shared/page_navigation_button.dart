@@ -46,6 +46,7 @@ class _PageNavigationButtonState extends State<PageNavigationButton> {
         : Theme.of(context).textTheme.title;
 
     return FlatButton(
+      hoverColor: Colors.transparent,
       child: Column(
         children: <Widget>[
           if (screenWidth > 400)
