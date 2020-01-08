@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/src/ui/widgets/profile/profile_additional_informations.dart';
 import 'package:portfolio/src/ui/widgets/profile/profile_header.dart';
 import 'package:portfolio/src/ui/widgets/shared/page_navigation_button.dart';
-import 'package:portfolio/src/ui/widgets/shared/scaffold.dart';
+import 'package:portfolio/src/ui/widgets/shared/scaffold/index.dart';
 import 'package:portfolio/src/ui/widgets/shared/scroll_notifying_page_view.dart';
 
 /// Porfolio home screen.

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:portfolio/src/utils/size_config.dart';
 
 import 'package:url_launcher/url_launcher.dart';
 
@@ -7,28 +8,33 @@ import 'package:url_launcher/url_launcher.dart';
 class ProfileAdditionalInformations extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-
-    TextStyle textStyle = (screenWidth < 600)
-        ? Theme.of(context).textTheme.headline
+    TextStyle titleTextStyle = (SizeConfig.isMobilePortrait)
+        ? Theme.of(context).textTheme.display2
         : Theme.of(context).textTheme.display1;
+    final TextStyle labelTextStyle = (SizeConfig.isMobilePortrait)
+        ? Theme.of(context).textTheme.display1
+        : Theme.of(context).textTheme.headline;
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        _buildSocial(context, screenWidth, textStyle),
-        SizedBox(height: (screenWidth < 600) ? 32.0 : 48.0),
-        _buildProjects(context, screenWidth, textStyle),
-        SizedBox(height: (screenWidth < 600) ? 32.0 : 48.0),
-        _buildContact(context, screenWidth, textStyle),
+        _buildSocial(context, titleTextStyle),
+        SizedBox(height: 5 * SizeConfig.heightMultiplier),
+        _buildProjects(context, titleTextStyle, labelTextStyle),
+        SizedBox(height: 5 * SizeConfig.heightMultiplier),
+        _buildContact(context, titleTextStyle, labelTextStyle),
       ],
     );
   }
 
   Widget _buildSocial(
-      BuildContext context, double screenWidth, TextStyle textStyle) {
-    double socialIconSize = (screenWidth < 600) ? 48.0 : 64.0;
+    BuildContext context,
+    TextStyle titleTextStyle,
+  ) {
+    double socialIconSize = (SizeConfig.isMobilePortrait)
+        ? 7 * SizeConfig.imageSizeMultiplier
+        : 5 * SizeConfig.imageSizeMultiplier;
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -37,13 +43,14 @@ class ProfileAdditionalInformations extends StatelessWidget {
         Text(
           'Want to know more about me ? Check out those platforms!',
           textAlign: TextAlign.center,
-          style: textStyle,
+          style: titleTextStyle,
         ),
-        SizedBox(height: 24.0),
+        SizedBox(height: 2 * SizeConfig.heightMultiplier),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             FlatButton(
+              hoverColor: Colors.transparent,
               child: Image.asset(
                 'assets/social/linkedin.png',
                 width: socialIconSize,
@@ -52,8 +59,9 @@ class ProfileAdditionalInformations extends StatelessWidget {
               onPressed: () async =>
                   await _launchUrl('https://fr.linkedin.com/in/loanpetit'),
             ),
-            SizedBox(width: 24.0),
+            SizedBox(width: 1 * SizeConfig.widthMultiplier),
             FlatButton(
+              hoverColor: Colors.transparent,
               child: Image.asset(
                 'assets/social/github.png',
                 width: socialIconSize,
@@ -69,11 +77,10 @@ class ProfileAdditionalInformations extends StatelessWidget {
   }
 
   Widget _buildProjects(
-      BuildContext context, double screenWidth, TextStyle textStyle) {
-    TextStyle labelStyle = (screenWidth < 600)
-        ? Theme.of(context).textTheme.subhead
-        : Theme.of(context).textTheme.title;
-
+    BuildContext context,
+    TextStyle titleTextStyle,
+    TextStyle labelTextStyle,
+  ) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -81,9 +88,9 @@ class ProfileAdditionalInformations extends StatelessWidget {
         Text(
           'I also have some projects to show you.',
           textAlign: TextAlign.center,
-          style: textStyle,
+          style: titleTextStyle,
         ),
-        SizedBox(height: 24.0),
+        SizedBox(height: 2 * SizeConfig.heightMultiplier),
         FlatButton.icon(
           color: Theme.of(context).colorScheme.primary,
           padding: EdgeInsets.all(10.0),
@@ -94,12 +101,12 @@ class ProfileAdditionalInformations extends StatelessWidget {
               Icon(Icons.work, color: Theme.of(context).colorScheme.onPrimary),
           label: Text(
             'My projects',
-            style: labelStyle.apply(
+            style: labelTextStyle.apply(
               color: Theme.of(context).colorScheme.onPrimary,
             ),
           ),
           onPressed: () {
-            print("hello");
+            Navigator.pushReplacementNamed(context, "/projects");
           },
         ),
       ],
@@ -107,11 +114,11 @@ class ProfileAdditionalInformations extends StatelessWidget {
   }
 
   Widget _buildContact(
-      BuildContext context, double screenWidth, TextStyle textStyle) {
+    BuildContext context,
+    TextStyle titleTextStyle,
+    TextStyle labelTextStyle,
+  ) {
     const String email = 'petit.loan1@gmail.com';
-    TextStyle labelStyle = (screenWidth < 600)
-        ? Theme.of(context).textTheme.subhead
-        : Theme.of(context).textTheme.title;
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -120,9 +127,9 @@ class ProfileAdditionalInformations extends StatelessWidget {
         Text(
           'Interested in collaborating? Send me an email.',
           textAlign: TextAlign.center,
-          style: textStyle,
+          style: titleTextStyle,
         ),
-        SizedBox(height: 24.0),
+        SizedBox(height: 2 * SizeConfig.heightMultiplier),
         FlatButton.icon(
           color: Theme.of(context).colorScheme.primary,
           padding: EdgeInsets.all(10.0),
@@ -135,14 +142,17 @@ class ProfileAdditionalInformations extends StatelessWidget {
           ),
           label: Text(
             email,
-            style: labelStyle.apply(
+            style: labelTextStyle.apply(
               color: Theme.of(context).colorScheme.onPrimary,
             ),
           ),
           onPressed: () async {
             await Clipboard.setData(new ClipboardData(text: email));
             final snackBar = SnackBar(
-              content: Text('Email copied to clipboard', textAlign: TextAlign.center,),
+              content: Text(
+                'Email copied to clipboard',
+                textAlign: TextAlign.center,
+              ),
             );
             Scaffold.of(context).showSnackBar(snackBar);
           },

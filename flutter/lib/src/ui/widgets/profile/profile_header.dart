@@ -1,62 +1,51 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/src/ui/widgets/shared/responsive_widget.dart';
+import 'package:portfolio/src/utils/size_config.dart';
 
 /// Header introducing me on the home screen.
 class ProfileHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-
-    if (screenWidth < 1200) {
-      return _buildForSmallScreen(context);
-    } else {
-      return _buildForLargeScreen(context);
-    }
+    return ResponsiveWidget(
+      portraitLayout: _buildForSmallScreen(context),
+      landscapeLayout: _buildForLargeScreen(context),
+    );
   }
 
   Widget _buildForSmallScreen(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    TextStyle textStyle = (screenWidth < 400)
-        ? Theme.of(context).textTheme.display1
-        : Theme.of(context).textTheme.display2;
-
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         CircleAvatar(
-          radius: (screenWidth < 360) ? 50.0 : 80.0,
+          radius: 18 * SizeConfig.imageSizeMultiplier,
           backgroundColor: Colors.transparent,
           backgroundImage: AssetImage('assets/png/profile.png'),
         ),
-        SizedBox(height: 32.0),
+        SizedBox(height: 4 * SizeConfig.heightMultiplier),
         RichText(
           textAlign: TextAlign.center,
           text: TextSpan(
-            style: textStyle.apply(fontWeightDelta: 3),
+            style:
+                Theme.of(context).textTheme.display4.apply(fontWeightDelta: 3),
             children: <TextSpan>[
               TextSpan(text: "Hello, I'm "),
               TextSpan(
                 text: 'Loan PETIT',
-                style: textStyle.apply(
+                style: Theme.of(context).textTheme.display4.apply(
                     fontWeightDelta: 3,
                     color: Theme.of(context).colorScheme.primary),
               ),
             ],
           ),
         ),
-        SizedBox(height: 64.0),
-        _buildShortSummary(
-            context,
-            (screenWidth < 600)
-                ? Theme.of(context).textTheme.headline
-                : Theme.of(context).textTheme.display1),
+        SizedBox(height: 8 * SizeConfig.heightMultiplier),
+        _buildShortSummary(context)
       ],
     );
   }
 
   Widget _buildForLargeScreen(BuildContext context) {
-    TextStyle textStyle = Theme.of(context).textTheme.display4;
-
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -67,58 +56,58 @@ class ProfileHeader extends StatelessWidget {
               child: Align(
                 alignment: Alignment.center,
                 child: CircleAvatar(
-                  radius: 150.0,
+                  radius: 12 * SizeConfig.imageSizeMultiplier,
                   backgroundColor: Colors.transparent,
                   backgroundImage: AssetImage('assets/png/profile.png'),
                 ),
               ),
             ),
             Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>[
-                  Text(
-                    'Hello,',
-                    style: textStyle.apply(
-                      fontWeightDelta: 2,
+              child: RichText(
+                text: TextSpan(
+                  style: Theme.of(context)
+                      .textTheme
+                      .display4
+                      .apply(fontWeightDelta: 2),
+                  children: <TextSpan>[
+                    TextSpan(text: 'Hello,\n'),
+                    TextSpan(
+                      text: "I'm ",
+                      style: Theme.of(context).textTheme.display4.apply(
+                            fontWeightDelta: 3,
+                          ),
                     ),
-                  ),
-                  RichText(
-                    text: TextSpan(
-                      style: textStyle.apply(fontWeightDelta: 3),
-                      children: <TextSpan>[
-                        TextSpan(text: "I'm "),
-                        TextSpan(
-                          text: 'Loan PETIT',
-                          style: textStyle.apply(
-                              fontWeightDelta: 3,
-                              color: Theme.of(context).colorScheme.primary),
-                        ),
-                      ],
+                    TextSpan(
+                      text: 'Loan PETIT',
+                      style: Theme.of(context).textTheme.display4.apply(
+                          fontWeightDelta: 3,
+                          color: Theme.of(context).colorScheme.primary),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ],
         ),
-        SizedBox(height: 152.0),
-        _buildShortSummary(context, Theme.of(context).textTheme.display2),
+        SizedBox(height: 10 * SizeConfig.heightMultiplier),
+        _buildShortSummary(context),
       ],
     );
   }
 
-  Widget _buildShortSummary(BuildContext context, TextStyle textStyle) {
+  Widget _buildShortSummary(BuildContext context) {
     return RichText(
       textAlign: TextAlign.center,
       text: TextSpan(
-        style: textStyle,
+        style: Theme.of(context).textTheme.display2,
         children: <TextSpan>[
           TextSpan(text: "I am a "),
           TextSpan(
             text: 'freelance developer',
-            style:
-                textStyle.apply(color: Theme.of(context).colorScheme.primary),
+            style: Theme.of(context)
+                .textTheme
+                .display2
+                .apply(color: Theme.of(context).colorScheme.primary),
           ),
           TextSpan(
               text:

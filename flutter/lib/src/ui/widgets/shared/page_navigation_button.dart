@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/src/utils/size_config.dart';
 
 class PageNavigationButton extends StatefulWidget {
   final ValueNotifier<double> scrollNotifier;
@@ -40,25 +41,24 @@ class _PageNavigationButtonState extends State<PageNavigationButton> {
   }
 
   Widget _buildButton(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    TextStyle textStyle = (screenWidth < 600)
-        ? Theme.of(context).textTheme.subhead
-        : Theme.of(context).textTheme.title;
-
     return FlatButton(
       hoverColor: Colors.transparent,
       child: Column(
         children: <Widget>[
-          if (screenWidth > 400)
+          if (SizeConfig.isMobilePortrait == false)
             Text(
               widget.label,
-              style:
-                  textStyle.apply(color: Theme.of(context).colorScheme.primary),
+              style: Theme.of(context)
+                  .textTheme
+                  .headline
+                  .apply(color: Theme.of(context).colorScheme.primary),
             ),
           Icon(
             widget.icon,
             color: Theme.of(context).colorScheme.primary,
-            size: (screenWidth < 600) ? 30.0 : 50.0,
+            size: (SizeConfig.isMobilePortrait)
+                ? 8 * SizeConfig.imageSizeMultiplier
+                : 3 * SizeConfig.imageSizeMultiplier,
           ),
         ],
       ),

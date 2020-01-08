@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:portfolio/src/ui/widgets/projects/lifetools.dart';
-import 'package:portfolio/src/ui/widgets/shared/scaffold.dart';
+import 'package:portfolio/src/ui/widgets/shared/scaffold/index.dart';
 
 /// Showcase of each of my projects.
 class ProjectsScreen extends StatelessWidget {
