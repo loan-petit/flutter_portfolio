@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:portfolio/src/ui/widgets/shared/link.dart';
-import 'package:portfolio/src/utils/size_config.dart';
 
-import 'package:url_launcher/url_launcher.dart';
+import 'package:portfolio/src/ui/widgets/shared/link.dart';
+import 'package:portfolio/src/utils/launch_url.dart';
+import 'package:portfolio/src/utils/size_config.dart';
 
 /// Page with contact informations and social medias.
 class ProfileAdditionalInformations extends StatelessWidget {
@@ -92,13 +92,13 @@ class ProfileAdditionalInformations extends StatelessWidget {
             Link(
               label: "LinkedIn",
               onTap: () async =>
-                  await _launchUrl('https://fr.linkedin.com/in/loanpetit'),
+                  await launchUrl('https://fr.linkedin.com/in/loanpetit'),
             ),
             SizedBox(width: 1 * SizeConfig.widthMultiplier),
             Link(
               label: "Github",
               onTap: () async =>
-                  await _launchUrl('https://github.com/loan-petit'),
+                  await launchUrl('https://github.com/loan-petit'),
             ),
           ],
         ),
@@ -118,14 +118,5 @@ class ProfileAdditionalInformations extends StatelessWidget {
         ),
       ],
     );
-  }
-
-  /// Launch a web page at [url].
-  Future<void> _launchUrl(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
   }
 }

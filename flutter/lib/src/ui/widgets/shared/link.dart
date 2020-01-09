@@ -27,6 +27,7 @@ class Link extends StatelessWidget {
         ),
         child: Text(
           this.label,
+          textAlign: TextAlign.center,
           style: labelTextStyle.apply(
             color: Theme.of(context).colorScheme.primary,
             fontWeightDelta: 2,
