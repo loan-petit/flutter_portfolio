@@ -41,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
           notifier: _notifier,
           controller: _pageController,
           children: <Widget>[
-            _buildFirstPage(),
+            _buildHeader(),
             ProfileAdditionalInformations(),
           ],
         ),
@@ -49,7 +49,8 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildFirstPage() {
+  /// Build the profile header.
+  Widget _buildHeader() {
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
       crossAxisAlignment: CrossAxisAlignment.stretch,

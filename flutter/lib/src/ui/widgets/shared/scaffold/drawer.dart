@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/src/utils/size_config.dart';
 
+/// Drawer for application triggered by click on the [AppBar] menu button.
+/// 
+/// This drawer can only be revealed from devices with screen width inferior than
+/// 450px (mobiles for example).
 class AppDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

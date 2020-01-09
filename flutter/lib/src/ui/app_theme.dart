@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/src/utils/size_config.dart';
 
+/// Definition of the application theme and styling.
 class AppTheme {
   static const Brightness brightness = Brightness.light;
 
@@ -17,11 +18,11 @@ class AppTheme {
     surface: backgroundColor,
     background: backgroundColor,
     error: Colors.red,
-    onPrimary: backgroundColor,
-    onSecondary: backgroundColor,
-    onSurface: backgroundColor,
+    onPrimary: onBackgroundColor,
+    onSecondary: onBackgroundColor,
+    onSurface: onBackgroundColor,
     onBackground: onBackgroundColor,
-    onError: backgroundColor,
+    onError: onBackgroundColor,
   );
 
   static TextTheme _englishLike2018 = Typography.englishLike2018.apply(
@@ -41,6 +42,7 @@ class AppTheme {
     ),
   );
 
+  /// Initialize the theme based on the current [SizeConfig].
   void init() {
     _englishLike2018 = Typography.englishLike2018.apply(
       fontFamily: 'OpenSans',

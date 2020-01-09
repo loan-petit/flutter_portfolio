@@ -28,6 +28,7 @@ class ProfileAdditionalInformations extends StatelessWidget {
     );
   }
 
+  /// Build layout for the social part.
   Widget _buildSocial(
     BuildContext context,
     TextStyle titleTextStyle,
@@ -76,6 +77,7 @@ class ProfileAdditionalInformations extends StatelessWidget {
     );
   }
 
+  /// Build layout for the projects part.
   Widget _buildProjects(
     BuildContext context,
     TextStyle titleTextStyle,
@@ -113,6 +115,7 @@ class ProfileAdditionalInformations extends StatelessWidget {
     );
   }
 
+  /// Build layout for the contact part.
   Widget _buildContact(
     BuildContext context,
     TextStyle titleTextStyle,
@@ -161,6 +164,7 @@ class ProfileAdditionalInformations extends StatelessWidget {
     );
   }
 
+  /// Launch a web page at [url].
   Future<void> _launchUrl(String url) async {
     if (await canLaunch(url)) {
       await launch(url);

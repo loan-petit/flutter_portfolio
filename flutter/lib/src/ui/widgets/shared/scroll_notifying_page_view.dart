@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// Wrapper around [PageView] used to notify [children] of scroll via [notifier].
 class ScrollNotifyingPageView extends StatefulWidget {
   final Axis scrollDirection;
   final bool pageSnapping;

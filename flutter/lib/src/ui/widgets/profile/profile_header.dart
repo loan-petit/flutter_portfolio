@@ -7,12 +7,13 @@ class ProfileHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ResponsiveWidget(
-      portraitLayout: _buildForSmallScreen(context),
-      landscapeLayout: _buildForLargeScreen(context),
+      portraitLayout: _buildPortraitLayout(context),
+      landscapeLayout: _buildLandscapeLayout(context),
     );
   }
 
-  Widget _buildForSmallScreen(BuildContext context) {
+  /// Build the layout for a portrait orientation.
+  Widget _buildPortraitLayout(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -45,7 +46,8 @@ class ProfileHeader extends StatelessWidget {
     );
   }
 
-  Widget _buildForLargeScreen(BuildContext context) {
+  /// Build the layout for a landscape orientation.
+  Widget _buildLandscapeLayout(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -95,6 +97,7 @@ class ProfileHeader extends StatelessWidget {
     );
   }
 
+  /// Short summary of about me.
   Widget _buildShortSummary(BuildContext context) {
     return RichText(
       textAlign: TextAlign.center,

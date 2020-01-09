@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// Application UI configuration depending on screen constraints and orientation.
 class SizeConfig {
   static double _screenWidth;
   static double _screenHeight;
@@ -13,6 +14,7 @@ class SizeConfig {
   static bool isPortrait = true;
   static bool isMobilePortrait = false;
 
+  /// Initialize the class based on provided screen [constraints] and [orientation].
   void init(BoxConstraints constraints, Orientation orientation) {
     if (orientation == Orientation.portrait) {
       _screenWidth = constraints.maxWidth;
