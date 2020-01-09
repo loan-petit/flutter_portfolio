@@ -29,7 +29,8 @@ Currently, this repository is open-sourced mostly to showcase some of my technic
                 TextSpan(text: "Life"),
                 TextSpan(
                   text: 'Tools',
-                  style: Theme.of(context).textTheme.display3.apply(
+                  style: Theme.of(context).textTheme.display4.apply(
+                        fontSizeFactor: 0.8,
                         fontWeightDelta: 3,
                         color: Theme.of(context).colorScheme.primary,
                       ),

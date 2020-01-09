@@ -35,8 +35,10 @@ class Project extends StatelessWidget {
         RichText(
           textAlign: TextAlign.center,
           text: TextSpan(
-            style:
-                Theme.of(context).textTheme.display3.apply(fontWeightDelta: 3),
+            style: Theme.of(context).textTheme.display4.apply(
+                  fontSizeFactor: 0.8,
+                  fontWeightDelta: 3,
+                ),
             children: this.name,
           ),
         ),
@@ -55,6 +57,7 @@ class Project extends StatelessWidget {
     );
   }
 
+  /// Build links layout for portrait oriented screen.
   Widget _buildPortraitLinks(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -62,9 +65,9 @@ class Project extends StatelessWidget {
       children: <Widget>[
         Link(
           label: "Show preview",
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(builder: (_) => ImagePreview(this.previewUri)),
+          onTap: () => showDialog(
+            context: context,
+            builder: (BuildContext context) => ImagePreview(this.previewUri),
           ),
         ),
         SizedBox(height: 1 * SizeConfig.heightMultiplier),
@@ -81,26 +84,32 @@ class Project extends StatelessWidget {
     );
   }
 
+  /// Build links layout for landscape oriented screen.
   Widget _buildLandscapeLinks(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Link(
-          label: "Show preview",
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(builder: (_) => ImagePreview(this.previewUri)),
+        Expanded(
+          child: Link(
+            label: "Show preview",
+            onTap: () => showDialog(
+              context: context,
+              builder: (BuildContext context) => ImagePreview(this.previewUri),
+            ),
           ),
         ),
-        SizedBox(width: 10 * SizeConfig.widthMultiplier),
-        Link(
-          label: "Try it out",
-          onTap: () async => await launchUrl(this.demoUri),
+        Expanded(
+          child: Link(
+            label: "Try it out",
+            onTap: () async => await launchUrl(this.demoUri),
+          ),
         ),
-        SizedBox(width: 10 * SizeConfig.widthMultiplier),
-        Link(
-          label: "GitHub",
-          onTap: () async => await launchUrl(this.githubUri),
+        // SizedBox(width: 10 * SizeConfig.widthMultiplier),
+        Expanded(
+          child: Link(
+            label: "GitHub",
+            onTap: () async => await launchUrl(this.githubUri),
+          ),
         ),
       ],
     );
