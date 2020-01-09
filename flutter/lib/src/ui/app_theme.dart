@@ -18,11 +18,11 @@ class AppTheme {
     surface: backgroundColor,
     background: backgroundColor,
     error: Colors.red,
-    onPrimary: onBackgroundColor,
-    onSecondary: onBackgroundColor,
+    onPrimary: backgroundColor,
+    onSecondary: backgroundColor,
     onSurface: onBackgroundColor,
     onBackground: onBackgroundColor,
-    onError: onBackgroundColor,
+    onError: backgroundColor,
   );
 
   static TextTheme _englishLike2018 = Typography.englishLike2018.apply(

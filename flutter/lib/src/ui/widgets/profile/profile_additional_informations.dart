@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:portfolio/src/ui/widgets/shared/link.dart';
 import 'package:portfolio/src/utils/size_config.dart';
 
 import 'package:url_launcher/url_launcher.dart';
@@ -11,19 +12,60 @@ class ProfileAdditionalInformations extends StatelessWidget {
     TextStyle titleTextStyle = (SizeConfig.isMobilePortrait)
         ? Theme.of(context).textTheme.display2
         : Theme.of(context).textTheme.display1;
-    final TextStyle labelTextStyle = (SizeConfig.isMobilePortrait)
-        ? Theme.of(context).textTheme.display1
-        : Theme.of(context).textTheme.headline;
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
+        _buildProjects(context, titleTextStyle),
+        SizedBox(height: 5 * SizeConfig.heightMultiplier),
+        _buildServices(context, titleTextStyle),
+        SizedBox(height: 5 * SizeConfig.heightMultiplier),
         _buildSocial(context, titleTextStyle),
-        SizedBox(height: 5 * SizeConfig.heightMultiplier),
-        _buildProjects(context, titleTextStyle, labelTextStyle),
-        SizedBox(height: 5 * SizeConfig.heightMultiplier),
-        _buildContact(context, titleTextStyle, labelTextStyle),
+      ],
+    );
+  }
+
+  /// Build layout for the projects part.
+  Widget _buildProjects(BuildContext context, TextStyle titleTextStyle) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: <Widget>[
+        Text(
+          'Here are some of the projects I have made.',
+          textAlign: TextAlign.center,
+          style: titleTextStyle,
+        ),
+        SizedBox(height: 2 * SizeConfig.heightMultiplier),
+        Link(
+          label: "My projects",
+          onTap: () {
+            Navigator.pushReplacementNamed(context, "/projects");
+          },
+        ),
+      ],
+    );
+  }
+
+  /// Build layout for the services part.
+  Widget _buildServices(BuildContext context, TextStyle titleTextStyle) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: <Widget>[
+        Text(
+          "Want to collaborate? Check out my services.",
+          textAlign: TextAlign.center,
+          style: titleTextStyle,
+        ),
+        SizedBox(height: 2 * SizeConfig.heightMultiplier),
+        Link(
+          label: "My services",
+          onTap: () {
+            Navigator.pushReplacementNamed(context, "/services");
+          },
+        ),
       ],
     );
   }
@@ -33,123 +75,37 @@ class ProfileAdditionalInformations extends StatelessWidget {
     BuildContext context,
     TextStyle titleTextStyle,
   ) {
-    double socialIconSize = (SizeConfig.isMobilePortrait)
-        ? 7 * SizeConfig.imageSizeMultiplier
-        : 5 * SizeConfig.imageSizeMultiplier;
+    const String email = "petit.loan1@gmail.com";
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         Text(
-          'Want to know more about me ? Check out those platforms!',
-          textAlign: TextAlign.center,
+          "Let's connect.",
           style: titleTextStyle,
         ),
         SizedBox(height: 2 * SizeConfig.heightMultiplier),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            FlatButton(
-              hoverColor: Colors.transparent,
-              child: Image.asset(
-                'assets/social/linkedin.png',
-                width: socialIconSize,
-                height: socialIconSize,
-              ),
-              onPressed: () async =>
+            Link(
+              label: "LinkedIn",
+              onTap: () async =>
                   await _launchUrl('https://fr.linkedin.com/in/loanpetit'),
             ),
             SizedBox(width: 1 * SizeConfig.widthMultiplier),
-            FlatButton(
-              hoverColor: Colors.transparent,
-              child: Image.asset(
-                'assets/social/github.png',
-                width: socialIconSize,
-                height: socialIconSize,
-              ),
-              onPressed: () async =>
+            Link(
+              label: "Github",
+              onTap: () async =>
                   await _launchUrl('https://github.com/loan-petit'),
             ),
           ],
-        )
-      ],
-    );
-  }
-
-  /// Build layout for the projects part.
-  Widget _buildProjects(
-    BuildContext context,
-    TextStyle titleTextStyle,
-    TextStyle labelTextStyle,
-  ) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: <Widget>[
-        Text(
-          'I also have some projects to show you.',
-          textAlign: TextAlign.center,
-          style: titleTextStyle,
         ),
         SizedBox(height: 2 * SizeConfig.heightMultiplier),
-        FlatButton.icon(
-          color: Theme.of(context).colorScheme.primary,
-          padding: EdgeInsets.all(10.0),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(5.0),
-          ),
-          icon:
-              Icon(Icons.work, color: Theme.of(context).colorScheme.onPrimary),
-          label: Text(
-            'My projects',
-            style: labelTextStyle.apply(
-              color: Theme.of(context).colorScheme.onPrimary,
-            ),
-          ),
-          onPressed: () {
-            Navigator.pushReplacementNamed(context, "/projects");
-          },
-        ),
-      ],
-    );
-  }
-
-  /// Build layout for the contact part.
-  Widget _buildContact(
-    BuildContext context,
-    TextStyle titleTextStyle,
-    TextStyle labelTextStyle,
-  ) {
-    const String email = 'petit.loan1@gmail.com';
-
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: <Widget>[
-        Text(
-          'Interested in collaborating? Send me an email.',
-          textAlign: TextAlign.center,
-          style: titleTextStyle,
-        ),
-        SizedBox(height: 2 * SizeConfig.heightMultiplier),
-        FlatButton.icon(
-          color: Theme.of(context).colorScheme.primary,
-          padding: EdgeInsets.all(10.0),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(5.0),
-          ),
-          icon: Icon(
-            Icons.email,
-            color: Theme.of(context).colorScheme.onPrimary,
-          ),
-          label: Text(
-            email,
-            style: labelTextStyle.apply(
-              color: Theme.of(context).colorScheme.onPrimary,
-            ),
-          ),
-          onPressed: () async {
+        Link(
+          label: email,
+          onTap: () async {
             await Clipboard.setData(new ClipboardData(text: email));
             final snackBar = SnackBar(
               content: Text(
