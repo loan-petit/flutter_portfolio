@@ -1,36 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/src/ui/widgets/shared/emphasised_text.dart';
 import 'package:portfolio/src/utils/size_config.dart';
 
 /// Drawer for application triggered by click on the [AppBar] menu button.
-/// 
+///
 /// This drawer can only be revealed from devices with screen width inferior than
 /// 450px (mobiles for example).
 class AppDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final header = RichText(
-      textAlign: TextAlign.center,
-      text: TextSpan(
-        style: Theme.of(context).textTheme.display3.apply(fontWeightDelta: 3),
-        children: <TextSpan>[
-          TextSpan(text: 'Loan '),
-          TextSpan(
-            text: 'PETIT',
-            style: Theme.of(context).textTheme.display3.apply(
-                fontWeightDelta: 3,
-                color: Theme.of(context).colorScheme.primary),
-          ),
-        ],
-      ),
-    );
-
     return Drawer(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           SizedBox(height: 2 * SizeConfig.heightMultiplier),
-          header,
+          EmphasisedText(
+            text: "Loan *PETIT*",
+            style:
+                Theme.of(context).textTheme.display3.apply(fontWeightDelta: 3),
+          ),
           SizedBox(height: 3 * SizeConfig.heightMultiplier),
           _buildMenuItem(context, Icons.work, 'Projects', '/projects'),
         ],

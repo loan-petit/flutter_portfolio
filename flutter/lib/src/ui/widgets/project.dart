@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/src/ui/widgets/shared/emphasised_text.dart';
 import 'package:portfolio/src/ui/widgets/shared/image_preview.dart';
 import 'package:portfolio/src/ui/widgets/shared/link.dart';
 import 'package:portfolio/src/ui/widgets/shared/responsive_widget.dart';
@@ -11,7 +12,7 @@ import 'package:portfolio/src/utils/size_config.dart';
 ///
 /// Use [previewUri], [demoUri] and [githubUri] to make the presentation more concrete.
 class Project extends StatelessWidget {
-  final List<TextSpan> name;
+  final String name;
   final String description;
 
   final String previewUri;
@@ -32,22 +33,23 @@ class Project extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        RichText(
-          textAlign: TextAlign.center,
-          text: TextSpan(
-            style: Theme.of(context).textTheme.display4.apply(
-                  fontSizeFactor: 0.8,
-                  fontWeightDelta: 3,
-                ),
-            children: this.name,
-          ),
+        EmphasisedText(
+          text: this.name,
+          style: Theme.of(context).textTheme.display4.apply(
+                fontSizeFactor: 0.8,
+                fontWeightDelta: 3,
+              ),
         ),
         SizedBox(height: 4 * SizeConfig.heightMultiplier),
-        Text(
-          this.description,
-          textAlign: TextAlign.center,
+        EmphasisedText(
+          text: this.description,
           style: Theme.of(context).textTheme.display1,
         ),
+        // Text(
+        //   this.description,
+        //   textAlign: TextAlign.center,
+        //   style: Theme.of(context).textTheme.display1,
+        // ),
         SizedBox(height: 4 * SizeConfig.heightMultiplier),
         ResponsiveWidget(
           portraitLayout: _buildPortraitLinks(context),

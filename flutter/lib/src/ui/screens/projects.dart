@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/src/ui/widgets/project.dart';
+import 'package:portfolio/src/ui/widgets/shared/emphasised_text.dart';
 
 import 'package:portfolio/src/ui/widgets/shared/scaffold/index.dart';
 
@@ -10,11 +11,11 @@ class ProjectsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const String lifetoolsDescription =
-        '''LifeTools is a personal project created for better management of daily habits and daily goals. It helps you building and sticking to habits that matter to you.
+        '''LifeTools is a *personal project* created for better management of daily habits and daily goals. It helps you building and sticking to habits that matter to you.
 
 This idea came from a lack of any applications matching my expectations in daily routine management. LifeTools is still is in a very early stage. Some crucial features will be implemented over time.
 
-Currently, this repository is open-sourced mostly to showcase some of my technical skills.
+Currently, this repository is open-sourced mostly to *showcase some of my technical skills*.
 ''';
 
     return AppScaffold(
@@ -25,17 +26,7 @@ Currently, this repository is open-sourced mostly to showcase some of my technic
           controller: _pageController,
           children: <Widget>[
             Project(
-              name: <TextSpan>[
-                TextSpan(text: "Life"),
-                TextSpan(
-                  text: 'Tools',
-                  style: Theme.of(context).textTheme.display4.apply(
-                        fontSizeFactor: 0.8,
-                        fontWeightDelta: 3,
-                        color: Theme.of(context).colorScheme.primary,
-                      ),
-                ),
-              ],
+              name: "Life*Tools*",
               description: lifetoolsDescription,
               previewUri:
                   "https://raw.githubusercontent.com/loan-petit/lifetools/media/app_preview.png",

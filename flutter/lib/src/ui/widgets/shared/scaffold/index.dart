@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/src/ui/widgets/shared/emphasised_text.dart';
 import 'package:portfolio/src/ui/widgets/shared/scaffold/drawer.dart';
 import 'package:portfolio/src/utils/size_config.dart';
 
@@ -55,19 +56,9 @@ class _AppScaffoldState extends State<AppScaffold> {
         onPressed: () {
           Navigator.of(context).pushNamedAndRemoveUntil('/', (_) => false);
         },
-        child: RichText(
-          text: TextSpan(
-            style: titleTextStyle.apply(fontWeightDelta: 3),
-            children: <TextSpan>[
-              TextSpan(text: 'Loan '),
-              TextSpan(
-                text: 'PETIT',
-                style: titleTextStyle.apply(
-                    fontWeightDelta: 3,
-                    color: Theme.of(context).colorScheme.primary),
-              ),
-            ],
-          ),
+        child: EmphasisedText(
+          text: "Loan *PETIT*",
+          style: titleTextStyle.apply(fontWeightDelta: 3),
         ),
       ),
       actions: (SizeConfig.isPortrait == false)
@@ -83,25 +74,11 @@ class _AppScaffoldState extends State<AppScaffold> {
                 ),
               ),
               FlatButton(
-                onPressed: () {},
-                child: RichText(
-                  text: TextSpan(
+                  onPressed: () {},
+                  child: EmphasisedText(
+                    text: "*EN* / FR",
                     style: actionsTextStyle,
-                    children: <TextSpan>[
-                      TextSpan(
-                        text: 'EN',
-                        style: actionsTextStyle,
-                      ),
-                      TextSpan(text: ' / '),
-                      TextSpan(
-                        text: 'FR',
-                        style: actionsTextStyle.apply(
-                            color: Theme.of(context).colorScheme.primary),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+                  )),
             ]
           : null,
       elevation: 0,

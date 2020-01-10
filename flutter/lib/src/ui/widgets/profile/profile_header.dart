@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/src/ui/widgets/shared/emphasised_text.dart';
 import 'package:portfolio/src/ui/widgets/shared/responsive_widget.dart';
 import 'package:portfolio/src/utils/size_config.dart';
 
@@ -24,21 +25,11 @@ class ProfileHeader extends StatelessWidget {
           backgroundImage: AssetImage('assets/png/profile.png'),
         ),
         SizedBox(height: 4 * SizeConfig.heightMultiplier),
-        RichText(
-          textAlign: TextAlign.center,
-          text: TextSpan(
-            style:
-                Theme.of(context).textTheme.display4.apply(fontWeightDelta: 3),
-            children: <TextSpan>[
-              TextSpan(text: "Hello, I'm "),
-              TextSpan(
-                text: 'Loan PETIT',
-                style: Theme.of(context).textTheme.display4.apply(
-                    fontWeightDelta: 3,
-                    color: Theme.of(context).colorScheme.primary),
+        EmphasisedText(
+          text: "Hello, I'm *Loan PETIT*",
+          style: Theme.of(context).textTheme.display4.apply(
+                fontWeightDelta: 3,
               ),
-            ],
-          ),
         ),
         SizedBox(height: 8 * SizeConfig.heightMultiplier),
         _buildShortSummary(context)
@@ -99,24 +90,12 @@ class ProfileHeader extends StatelessWidget {
 
   /// Short summary of about me.
   Widget _buildShortSummary(BuildContext context) {
-    return RichText(
-      textAlign: TextAlign.center,
-      text: TextSpan(
-        style: Theme.of(context).textTheme.display2,
-        children: <TextSpan>[
-          TextSpan(text: "I am a "),
-          TextSpan(
-            text: 'freelance developer',
-            style: Theme.of(context)
-                .textTheme
-                .display2
-                .apply(color: Theme.of(context).colorScheme.primary),
-          ),
-          TextSpan(
-              text:
-                  ' passionate about innovative, disruptive and ambitious projects.'),
-        ],
-      ),
+    const String summary =
+        "I am a *freelance developer* passionate about innovative, disruptive and ambitious projects.";
+
+    return EmphasisedText(
+      text: summary,
+      style: Theme.of(context).textTheme.display2,
     );
   }
 }
