@@ -66,6 +66,16 @@ class _AppScaffoldState extends State<AppScaffold> {
               FlatButton(
                 onPressed: () {
                   Navigator.of(context)
+                      .pushNamedAndRemoveUntil('/services', (_) => false);
+                },
+                child: Text(
+                  "My services",
+                  style: actionsTextStyle,
+                ),
+              ),
+              FlatButton(
+                onPressed: () {
+                  Navigator.of(context)
                       .pushNamedAndRemoveUntil('/projects', (_) => false);
                 },
                 child: Text(

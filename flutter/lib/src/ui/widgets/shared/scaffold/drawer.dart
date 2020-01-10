@@ -21,7 +21,9 @@ class AppDrawer extends StatelessWidget {
                 Theme.of(context).textTheme.display3.apply(fontWeightDelta: 3),
           ),
           SizedBox(height: 3 * SizeConfig.heightMultiplier),
-          _buildMenuItem(context, Icons.work, 'Projects', '/projects'),
+          _buildMenuItem(context, Icons.work, 'My services', '/services'),
+          SizedBox(height: 2 * SizeConfig.heightMultiplier),
+          _buildMenuItem(context, Icons.folder, 'Projects', '/projects'),
         ],
       ),
     );

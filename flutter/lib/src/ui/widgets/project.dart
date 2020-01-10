@@ -45,11 +45,6 @@ class Project extends StatelessWidget {
           text: this.description,
           style: Theme.of(context).textTheme.display1,
         ),
-        // Text(
-        //   this.description,
-        //   textAlign: TextAlign.center,
-        //   style: Theme.of(context).textTheme.display1,
-        // ),
         SizedBox(height: 4 * SizeConfig.heightMultiplier),
         ResponsiveWidget(
           portraitLayout: _buildPortraitLinks(context),

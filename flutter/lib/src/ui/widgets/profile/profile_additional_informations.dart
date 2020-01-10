@@ -86,6 +86,20 @@ class ProfileAdditionalInformations extends StatelessWidget {
           style: titleTextStyle,
         ),
         SizedBox(height: 2 * SizeConfig.heightMultiplier),
+        Link(
+          label: email,
+          onTap: () async {
+            await Clipboard.setData(new ClipboardData(text: email));
+            final snackBar = SnackBar(
+              content: Text(
+                'Email copied to clipboard',
+                textAlign: TextAlign.center,
+              ),
+            );
+            Scaffold.of(context).showSnackBar(snackBar);
+          },
+        ),
+        SizedBox(height: 1* SizeConfig.heightMultiplier),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -101,20 +115,6 @@ class ProfileAdditionalInformations extends StatelessWidget {
                   await launchUrl('https://github.com/loan-petit'),
             ),
           ],
-        ),
-        SizedBox(height: 2 * SizeConfig.heightMultiplier),
-        Link(
-          label: email,
-          onTap: () async {
-            await Clipboard.setData(new ClipboardData(text: email));
-            final snackBar = SnackBar(
-              content: Text(
-                'Email copied to clipboard',
-                textAlign: TextAlign.center,
-              ),
-            );
-            Scaffold.of(context).showSnackBar(snackBar);
-          },
         ),
       ],
     );

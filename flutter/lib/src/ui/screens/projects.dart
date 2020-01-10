@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/src/ui/widgets/project.dart';
-import 'package:portfolio/src/ui/widgets/shared/emphasised_text.dart';
 
 import 'package:portfolio/src/ui/widgets/shared/scaffold/index.dart';
 

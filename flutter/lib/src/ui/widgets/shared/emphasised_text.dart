@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 /// Emphasis parts of the [text] contained in '*' characters with the [textStyle].
 class EmphasisedText extends StatelessWidget {
   final String text;
+  final TextAlign textAlign;
   final TextStyle style;
 
   EmphasisedText({
     this.text,
+    this.textAlign,
     this.style,
   })  : assert(text != null),
         assert(style != null);
@@ -14,7 +16,7 @@ class EmphasisedText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RichText(
-      textAlign: TextAlign.center,
+      textAlign: (this.textAlign != null) ? this.textAlign : TextAlign.center,
       text: TextSpan(
         style: this.style,
         children: _getSpans(context),
@@ -31,9 +33,6 @@ class EmphasisedText extends StatelessWidget {
       final int startIndex = tmp.indexOf('*');
       final int endIndex =
           startIndex + 1 + tmp.substring(startIndex + 1).indexOf("*");
-      print("Hello");
-      print(startIndex);
-      print(endIndex);
 
       if (startIndex != -1 && endIndex != -1) {
         spans.add(
