@@ -99,7 +99,7 @@ class ProfileAdditionalInformations extends StatelessWidget {
             Scaffold.of(context).showSnackBar(snackBar);
           },
         ),
-        SizedBox(height: 1* SizeConfig.heightMultiplier),
+        SizedBox(height: 1 * SizeConfig.heightMultiplier),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+
 import 'package:portfolio/src/utils/size_config.dart';
 
 /// Wrapper around a [FlatButton] indicating the presence of a page under the current one.
-/// 
+///
 /// Button's UI react to scroll on page with opacity changes based on [scrollNotifier].
-/// 
+///
 /// A click on the button triggers a page change in [PageView] using [pageController].
 class PageNavigationButton extends StatefulWidget {
   final ValueNotifier<double> scrollNotifier;

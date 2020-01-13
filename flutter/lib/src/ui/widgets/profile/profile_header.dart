@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import 'package:portfolio/src/app_localizations.dart';
 import 'package:portfolio/src/ui/widgets/shared/emphasised_text.dart';
 import 'package:portfolio/src/ui/widgets/shared/responsive_widget.dart';
 import 'package:portfolio/src/utils/size_config.dart';
@@ -26,7 +28,7 @@ class ProfileHeader extends StatelessWidget {
         ),
         SizedBox(height: 4 * SizeConfig.heightMultiplier),
         EmphasisedText(
-          text: "Hello, I'm *Loan PETIT*",
+          text: AppLocalization.of(context).welcome(""),
           style: Theme.of(context).textTheme.display4.apply(
                 fontWeightDelta: 3,
               ),
@@ -56,28 +58,12 @@ class ProfileHeader extends StatelessWidget {
               ),
             ),
             Expanded(
-              child: RichText(
-                text: TextSpan(
-                  style: Theme.of(context)
-                      .textTheme
-                      .display4
-                      .apply(fontWeightDelta: 2),
-                  children: <TextSpan>[
-                    TextSpan(text: 'Hello,\n'),
-                    TextSpan(
-                      text: "I'm ",
-                      style: Theme.of(context).textTheme.display4.apply(
-                            fontWeightDelta: 3,
-                          ),
+              child: EmphasisedText(
+                text: AppLocalization.of(context).welcome("\n"),
+                textAlign: TextAlign.start,
+                style: Theme.of(context).textTheme.display4.apply(
+                      fontWeightDelta: 3,
                     ),
-                    TextSpan(
-                      text: 'Loan PETIT',
-                      style: Theme.of(context).textTheme.display4.apply(
-                          fontWeightDelta: 3,
-                          color: Theme.of(context).colorScheme.primary),
-                    ),
-                  ],
-                ),
               ),
             ),
           ],
@@ -90,11 +76,8 @@ class ProfileHeader extends StatelessWidget {
 
   /// Short summary of about me.
   Widget _buildShortSummary(BuildContext context) {
-    const String summary =
-        "I am a *freelance developer* passionate about innovative, disruptive and ambitious projects.";
-
     return EmphasisedText(
-      text: summary,
+      text: AppLocalization.of(context).shortSummary,
       style: Theme.of(context).textTheme.display2,
     );
   }

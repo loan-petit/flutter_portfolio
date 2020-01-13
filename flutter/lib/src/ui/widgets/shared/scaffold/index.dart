@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import 'package:portfolio/src/app_localizations.dart';
 import 'package:portfolio/src/ui/widgets/shared/emphasised_text.dart';
 import 'package:portfolio/src/ui/widgets/shared/scaffold/drawer.dart';
 import 'package:portfolio/src/utils/size_config.dart';
@@ -57,7 +59,7 @@ class _AppScaffoldState extends State<AppScaffold> {
           Navigator.of(context).pushNamedAndRemoveUntil('/', (_) => false);
         },
         child: EmphasisedText(
-          text: "Loan *PETIT*",
+          text: AppLocalization.of(context).title,
           style: titleTextStyle.apply(fontWeightDelta: 3),
         ),
       ),
@@ -84,11 +86,22 @@ class _AppScaffoldState extends State<AppScaffold> {
                 ),
               ),
               FlatButton(
-                  onPressed: () {},
-                  child: EmphasisedText(
-                    text: "*EN* / FR",
-                    style: actionsTextStyle,
-                  )),
+                onPressed: () async {
+                  if (AppLocalization.locale.languageCode == "en") {
+                    await AppLocalization.setLocale(Locale("fr", ""));
+                    setState(() {});
+                  } else {
+                    await AppLocalization.setLocale(Locale("en", ""));
+                    setState(() {});
+                  }
+                },
+                child: EmphasisedText(
+                  text: (AppLocalization.locale.languageCode == "en")
+                      ? "*EN* / FR"
+                      : "EN / *FR*",
+                  style: actionsTextStyle,
+                ),
+              ),
             ]
           : null,
       elevation: 0,

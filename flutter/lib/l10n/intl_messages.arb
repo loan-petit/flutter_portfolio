@@ -1,0 +1,20 @@
+{
+  "@@last_modified": "2020-01-13T21:39:31.329680",
+  "title": "",
+  "@title": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "welcome": "",
+  "@welcome": {
+    "type": "text",
+    "placeholders": {
+      "newline": {}
+    }
+  },
+  "shortSummary": "",
+  "@shortSummary": {
+    "type": "text",
+    "placeholders": {}
+  }
+}

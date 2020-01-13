@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:portfolio/src/utils/size_config.dart';
 
 /// Definition of the application theme and styling.

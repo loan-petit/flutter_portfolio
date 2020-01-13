@@ -29,6 +29,8 @@ ADD . /app/
 ADD nginx.conf /app/
 RUN pub get --offline
 
+RUN ./generate_localizable_strings.sh
+
 # Build client files which will be served by nginx
 RUN flutter build web -t lib/main_prod.dart
 

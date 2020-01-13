@@ -1,0 +1,18 @@
+{
+  "@@locale": "en",
+  "title": "Loan *PETIT*",
+  "@title": {
+    "type": "text"
+  },
+  "welcome": "Hello, {newline}I'm *Loan PETIT*",
+  "@welcome": {
+    "type": "text",
+    "placeholders": {
+      "newline": {}
+    }
+  },
+  "shortSummary": "I am a *freelance developer* passionate about innovative, disruptive and ambitious projects.",
+  "@shortSummary": {
+    "type": "text"
+  }
+}
