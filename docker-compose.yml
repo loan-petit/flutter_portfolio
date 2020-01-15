@@ -19,7 +19,7 @@ services:
     build: 
       context: ./flutter/
       args:
-        FLUTTER_VERSION: v1.13.6
+        FLUTTER_VERSION: v1.14.0
     image: loanpetit_flutter:latest
     container_name: loanpetit_flutter
     restart: always

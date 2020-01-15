@@ -27,17 +27,13 @@ class _AppScaffoldState extends State<AppScaffold> {
       appBar: _buildAppBar(),
       drawer: (SizeConfig.isPortrait) ? SafeArea(child: AppDrawer()) : null,
       body: SafeArea(
-        child: OrientationBuilder(
-          builder: (context, orientation) {
-            return Container(
-              margin: (orientation == Orientation.landscape)
-                  ? EdgeInsets.symmetric(
-                      horizontal: 10 * SizeConfig.widthMultiplier)
-                  : null,
-              child: widget.body,
-              alignment: Alignment.topCenter,
-            );
-          },
+        child: Container(
+          margin: (!SizeConfig.isPortrait)
+              ? EdgeInsets.symmetric(
+                  horizontal: 10 * SizeConfig.widthMultiplier)
+              : null,
+          child: widget.body,
+          alignment: Alignment.topCenter,
         ),
       ),
     );
@@ -53,7 +49,7 @@ class _AppScaffoldState extends State<AppScaffold> {
 
     return AppBar(
       iconTheme:
-          new IconThemeData(color: Theme.of(context).colorScheme.onBackground),
+          IconThemeData(color: Theme.of(context).colorScheme.onBackground),
       title: FlatButton(
         onPressed: () {
           Navigator.of(context).pushNamedAndRemoveUntil('/', (_) => false);
@@ -89,11 +85,12 @@ class _AppScaffoldState extends State<AppScaffold> {
                 onPressed: () async {
                   if (AppLocalization.locale.languageCode == "en") {
                     await AppLocalization.setLocale(Locale("fr", ""));
-                    setState(() {});
                   } else {
                     await AppLocalization.setLocale(Locale("en", ""));
-                    setState(() {});
                   }
+                  setState(() {
+                    // Rerender with the new localization.
+                  });
                 },
                 child: EmphasisedText(
                   text: (AppLocalization.locale.languageCode == "en")

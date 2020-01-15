@@ -17,10 +17,17 @@ class AppDrawer extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           SizedBox(height: 2 * SizeConfig.heightMultiplier),
-          EmphasisedText(
-            text: AppLocalization.of(context).title,
-            style:
-                Theme.of(context).textTheme.display3.apply(fontWeightDelta: 3),
+          FlatButton(
+            onPressed: () {
+              Navigator.of(context).pushNamedAndRemoveUntil('/', (_) => false);
+            },
+            child: EmphasisedText(
+              text: AppLocalization.of(context).title,
+              style: Theme.of(context)
+                  .textTheme
+                  .display3
+                  .apply(fontWeightDelta: 3),
+            ),
           ),
           SizedBox(height: 3 * SizeConfig.heightMultiplier),
           _buildMenuItem(context, Icons.work,

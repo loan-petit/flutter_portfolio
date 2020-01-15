@@ -10,7 +10,7 @@ import 'package:portfolio/src/utils/size_config.dart';
 class ProfileAdditionalInformations extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    TextStyle titleTextStyle = (SizeConfig.isMobilePortrait)
+    TextStyle titleTextStyle = (SizeConfig.isPortrait)
         ? Theme.of(context).textTheme.display2
         : Theme.of(context).textTheme.display1;
 

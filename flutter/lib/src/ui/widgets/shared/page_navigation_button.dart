@@ -37,16 +37,16 @@ class _PageNavigationButtonState extends State<PageNavigationButton> {
               : widget.scrollNotifier.value;
           return Opacity(
             opacity: opacity.abs(),
-            child: _buildButton(context),
+            child: _buildButton(),
           );
         },
       );
     } else {
-      return _buildButton(context);
+      return _buildButton();
     }
   }
 
-  Widget _buildButton(BuildContext context) {
+  Widget _buildButton() {
     return FlatButton(
       hoverColor: Colors.transparent,
       child: Column(
