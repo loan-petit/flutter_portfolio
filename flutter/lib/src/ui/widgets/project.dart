@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/src/app_localizations.dart';
 
 import 'package:portfolio/src/ui/widgets/shared/emphasised_text.dart';
 import 'package:portfolio/src/ui/widgets/shared/image_preview.dart';
@@ -62,7 +63,7 @@ class Project extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         Link(
-          label: "Show preview",
+          label: AppLocalization.of(context).showPreviewButton,
           onTap: () => showDialog(
             context: context,
             builder: (BuildContext context) => ImagePreview(this.previewUri),
@@ -70,13 +71,13 @@ class Project extends StatelessWidget {
         ),
         SizedBox(height: 1 * SizeConfig.heightMultiplier),
         Link(
-          label: "GitHub",
-          onTap: () async => await launchUrl(this.githubUri),
+          label: AppLocalization.of(context).tryItOutButton,
+          onTap: () async => await launchUrl(this.demoUri),
         ),
         SizedBox(height: 1 * SizeConfig.heightMultiplier),
         Link(
-          label: "Try it out",
-          onTap: () async => await launchUrl(this.demoUri),
+          label: "GitHub",
+          onTap: () async => await launchUrl(this.githubUri),
         ),
       ],
     );
@@ -89,7 +90,7 @@ class Project extends StatelessWidget {
       children: <Widget>[
         Expanded(
           child: Link(
-            label: "Show preview",
+            label: AppLocalization.of(context).showPreviewButton,
             onTap: () => showDialog(
               context: context,
               builder: (BuildContext context) => ImagePreview(this.previewUri),
@@ -98,11 +99,10 @@ class Project extends StatelessWidget {
         ),
         Expanded(
           child: Link(
-            label: "Try it out",
+            label: AppLocalization.of(context).tryItOutButton,
             onTap: () async => await launchUrl(this.demoUri),
           ),
         ),
-        // SizedBox(width: 10 * SizeConfig.widthMultiplier),
         Expanded(
           child: Link(
             label: "GitHub",

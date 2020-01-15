@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/src/app_localizations.dart';
 
 import 'package:portfolio/src/ui/widgets/profile/profile_additional_informations.dart';
 import 'package:portfolio/src/ui/widgets/profile/profile_header.dart';
@@ -59,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: ProfileHeader(),
         ),
         PageNavigationButton(
-          label: "Want to know more ? Scroll down.",
+          label: AppLocalization.of(context).homePageNavigationButtonLabel,
           icon: Icons.expand_more,
           scrollNotifier: _notifier,
           pageController: _pageController,

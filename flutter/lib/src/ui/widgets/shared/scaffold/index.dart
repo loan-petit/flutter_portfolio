@@ -71,7 +71,7 @@ class _AppScaffoldState extends State<AppScaffold> {
                       .pushNamedAndRemoveUntil('/services', (_) => false);
                 },
                 child: Text(
-                  "My services",
+                  AppLocalization.of(context).servicesLink,
                   style: actionsTextStyle,
                 ),
               ),
@@ -81,7 +81,7 @@ class _AppScaffoldState extends State<AppScaffold> {
                       .pushNamedAndRemoveUntil('/projects', (_) => false);
                 },
                 child: Text(
-                  "Projects",
+                  AppLocalization.of(context).projectsLink,
                   style: actionsTextStyle,
                 ),
               ),

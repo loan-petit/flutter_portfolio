@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2020-01-13T21:39:31.329680",
+  "@@last_modified": "2020-01-15T16:58:53.856324",
   "title": "",
   "@title": {
     "type": "text",
@@ -14,6 +14,76 @@
   },
   "shortSummary": "",
   "@shortSummary": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "homePageNavigationButtonLabel": "",
+  "@homePageNavigationButtonLabel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "projectsLinkIntro": "",
+  "@projectsLinkIntro": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "projectsLink": "",
+  "@projectsLink": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "servicesLinkIntro": "",
+  "@servicesLinkIntro": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "servicesLink": "",
+  "@servicesLink": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "socialLinkIntro": "",
+  "@socialLinkIntro": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "emailCopiedMessage": "",
+  "@emailCopiedMessage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "showPreviewButton": "",
+  "@showPreviewButton": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "tryItOutButton": "",
+  "@tryItOutButton": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "lifetoolsName": "",
+  "@lifetoolsName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "lifetoolsDescription": "",
+  "@lifetoolsDescription": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "servicesTitle": "",
+  "@servicesTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "servicesDescription": "",
+  "@servicesDescription": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "dailyAverageRate": "",
+  "@dailyAverageRate": {
     "type": "text",
     "placeholders": {}
   }

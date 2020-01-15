@@ -51,6 +51,7 @@ class _AppState extends State<App> {
           builder: (context, orientation) {
             SizeConfig().init(constraints, orientation);
             AppTheme().init();
+
             return MaterialApp(
               localeResolutionCallback: (deviceLocale, _) {
                 if (_locale == null) {

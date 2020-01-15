@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/src/app_localizations.dart';
 
 import 'package:portfolio/src/ui/widgets/shared/emphasised_text.dart';
 import 'package:portfolio/src/ui/widgets/shared/scaffold/index.dart';
@@ -8,20 +9,6 @@ import 'package:portfolio/src/utils/size_config.dart';
 class ServicesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    const String summary = '''My main areas of expertise are:
-• Development of mobile and web applications: Flutter, React.
-• Back-end development: GraphQL, Prisma, MongoDB.
-• DevOps implementation: Docker, GitHub Actions.
-• Chatbot development and deployment on voice assistants.
-• Advice on the architecture of solutions and technological choices.
-
-My experiences and my adaptability allow me to support you on each step of the implementation of your project, from the idea to the deployment in production.
-
-Do not hesitate to contact me for more information about my services. I would be happy to advise you and meet your needs.
-
-Looking forward to discussing or working with you. :) 
-''';
-
     return AppScaffold(
       body: Padding(
         padding: EdgeInsets.all(12.0),
@@ -30,7 +17,7 @@ Looking forward to discussing or working with you. :)
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             EmphasisedText(
-              text: "My *services*",
+              text: AppLocalization.of(context).servicesTitle,
               style: Theme.of(context).textTheme.display4.apply(
                     fontSizeFactor: 0.8,
                     fontWeightDelta: 3,
@@ -38,13 +25,13 @@ Looking forward to discussing or working with you. :)
             ),
             SizedBox(height: 4 * SizeConfig.heightMultiplier),
             EmphasisedText(
-              text: summary,
+              text: AppLocalization.of(context).servicesDescription,
               textAlign: TextAlign.justify,
               style: Theme.of(context).textTheme.display1,
             ),
             SizedBox(height: 4 * SizeConfig.heightMultiplier),
             EmphasisedText(
-              text: "Daily average rate\n\n*350€*",
+              text: AppLocalization.of(context).dailyAverageRate + '\n\n*350€*',
               style: Theme.of(context).textTheme.display1.apply(
                     fontSizeFactor: 0.8,
                   ),

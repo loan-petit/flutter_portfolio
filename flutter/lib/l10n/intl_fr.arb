@@ -1,18 +1,25 @@
 {
   "@@locale": "fr",
   "title": "Loan *PETIT*",
-  "@title": {
-    "type": "text"
-  },
   "welcome": "Bonjour, {newline}Je suis *Loan PETIT*",
   "@welcome": {
-    "type": "text",
     "placeholders": {
       "newline": {}
     }
   },
-  "shortSummary": "Je suis un *développeur indépendant* passioné par les projets innovants, disruptifs et ambitieux.",
-  "@shortSummary": {
-    "type": "text"
-  }
+  "shortSummary": "Je suis un *développeur indépendant* passionné par les projets innovants, disruptifs et ambitieux.",
+  "homePageNavigationButtonLabel": "Envie d'en savoir plus ? Défilez vers le bas.",
+  "projectsLinkIntro": "Voici quelques-uns des projets que j'ai réalisés.",
+  "projectsLink": "Mes projets",
+  "servicesLinkIntro": "Envie de collaborer ? Jetez un oeil aux services que je propose.",
+  "servicesLink": "Mes services",
+  "socialLinkIntro": "Connectons-nous.",
+  "emailCopiedMessage": "L'adresse email a été copiée",
+  "showPreviewButton": "Afficher l'aperçu",
+  "tryItOutButton": "Tester",
+  "lifetoolsName": "Life*Tools*",
+  "lifetoolsDescription": "LifeTools est un *projet personnel* créé afin de mieux gérer notre routine quotidienne et nos objectifs quotidiens. Il vous aide à créer et à tenir les habitudes qui comptent pour vous. \nCette idée m'est venue d'un manque d'application répondant parfaitement à mes besoins en matière de gestion de routine quotidienne. \nActuellement, ce dépôt est libre de droit principalement pour *démontrer une partie de mes compétences techniques*.",
+  "servicesTitle": "Mes *services*",
+  "servicesDescription": "• Développement d'applications mobile et web : Flutter, React.\n• Développement de back-end : GraphQL, Prisma, MongoDB.\n• Mise en place du DevOps : Docker, GitHub Actions.\n• Développement de chatbot et déploiement sur les assistants vocaux.\n• Conseil sur l'architecture de solution et sur les choix technologiques.\n\nMes expériences et mon adaptabilité me permettent de vous soutenir au mieux sur chacune des étapes de la mise en place de votre projet, de l'idée au déploiement en production.\n\nN'hésitez pas à me contacter pour de plus amples informations sur mes prestations. Je serais ravi de vous conseiller et de répondre à vos besoins.\n\nAu plaisir d'échanger ou de travailler avec vous. :)",
+  "dailyAverageRate": "Taux journalier moyen"
 }

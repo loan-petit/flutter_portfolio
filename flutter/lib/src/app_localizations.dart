@@ -56,10 +56,32 @@ class AppLocalization {
     }
   }
 
+  // Home page localizations.
   String get title => Intl.message('', name: 'title');
   String welcome(String newline) =>
       Intl.message('', name: 'welcome', args: [newline]);
   String get shortSummary => Intl.message('', name: 'shortSummary');
+  String get homePageNavigationButtonLabel =>
+      Intl.message('', name: 'homePageNavigationButtonLabel');
+  String get projectsLinkIntro => Intl.message('', name: 'projectsLinkIntro');
+  String get projectsLink => Intl.message('', name: 'projectsLink');
+  String get servicesLinkIntro => Intl.message('', name: 'servicesLinkIntro');
+  String get servicesLink => Intl.message('', name: 'servicesLink');
+  String get socialLinkIntro => Intl.message('', name: 'socialLinkIntro');
+  String get emailCopiedMessage => Intl.message('', name: 'emailCopiedMessage');
+
+  // Projects localizations.
+  String get showPreviewButton => Intl.message('', name: 'showPreviewButton');
+  String get tryItOutButton => Intl.message('', name: 'tryItOutButton');
+  String get lifetoolsName => Intl.message('', name: 'lifetoolsName');
+  String get lifetoolsDescription =>
+      Intl.message('', name: 'lifetoolsDescription');
+
+  // Services localizations.
+  String get servicesTitle => Intl.message('', name: 'servicesTitle');
+  String get servicesDescription =>
+      Intl.message('', name: 'servicesDescription');
+  String get dailyAverageRate => Intl.message('', name: 'dailyAverageRate');
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalization> {

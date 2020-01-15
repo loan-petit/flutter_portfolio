@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:portfolio/src/app_localizations.dart';
 
 import 'package:portfolio/src/ui/widgets/shared/link.dart';
 import 'package:portfolio/src/utils/launch_url.dart';
@@ -33,13 +34,13 @@ class ProfileAdditionalInformations extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         Text(
-          'Here are some of the projects I have made.',
+          AppLocalization.of(context).projectsLinkIntro,
           textAlign: TextAlign.center,
           style: titleTextStyle,
         ),
         SizedBox(height: 2 * SizeConfig.heightMultiplier),
         Link(
-          label: "My projects",
+          label: AppLocalization.of(context).projectsLink,
           onTap: () {
             Navigator.pushReplacementNamed(context, "/projects");
           },
@@ -55,13 +56,13 @@ class ProfileAdditionalInformations extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         Text(
-          "Want to collaborate? Check out my services.",
+          AppLocalization.of(context).servicesLinkIntro,
           textAlign: TextAlign.center,
           style: titleTextStyle,
         ),
         SizedBox(height: 2 * SizeConfig.heightMultiplier),
         Link(
-          label: "My services",
+          label: AppLocalization.of(context).servicesLink,
           onTap: () {
             Navigator.pushReplacementNamed(context, "/services");
           },
@@ -82,7 +83,7 @@ class ProfileAdditionalInformations extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         Text(
-          "Let's connect.",
+          AppLocalization.of(context).socialLinkIntro,
           style: titleTextStyle,
         ),
         SizedBox(height: 2 * SizeConfig.heightMultiplier),
@@ -92,7 +93,7 @@ class ProfileAdditionalInformations extends StatelessWidget {
             await Clipboard.setData(new ClipboardData(text: email));
             final snackBar = SnackBar(
               content: Text(
-                'Email copied to clipboard',
+                AppLocalization.of(context).emailCopiedMessage,
                 textAlign: TextAlign.center,
               ),
             );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/src/app_localizations.dart';
 
 import 'package:portfolio/src/ui/widgets/shared/emphasised_text.dart';
 import 'package:portfolio/src/utils/size_config.dart';
@@ -17,14 +18,16 @@ class AppDrawer extends StatelessWidget {
         children: <Widget>[
           SizedBox(height: 2 * SizeConfig.heightMultiplier),
           EmphasisedText(
-            text: "Loan *PETIT*",
+            text: AppLocalization.of(context).title,
             style:
                 Theme.of(context).textTheme.display3.apply(fontWeightDelta: 3),
           ),
           SizedBox(height: 3 * SizeConfig.heightMultiplier),
-          _buildMenuItem(context, Icons.work, 'My services', '/services'),
+          _buildMenuItem(context, Icons.work,
+              AppLocalization.of(context).servicesLink, '/services'),
           SizedBox(height: 2 * SizeConfig.heightMultiplier),
-          _buildMenuItem(context, Icons.folder, 'Projects', '/projects'),
+          _buildMenuItem(context, Icons.folder,
+              AppLocalization.of(context).projectsLink, '/projects'),
         ],
       ),
     );

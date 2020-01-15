@@ -23,8 +23,22 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
+    "dailyAverageRate" : MessageLookupByLibrary.simpleMessage(""),
+    "emailCopiedMessage" : MessageLookupByLibrary.simpleMessage(""),
+    "homePageNavigationButtonLabel" : MessageLookupByLibrary.simpleMessage(""),
+    "lifetoolsDescription" : MessageLookupByLibrary.simpleMessage(""),
+    "lifetoolsName" : MessageLookupByLibrary.simpleMessage(""),
+    "projectsLink" : MessageLookupByLibrary.simpleMessage(""),
+    "projectsLinkIntro" : MessageLookupByLibrary.simpleMessage(""),
+    "servicesDescription" : MessageLookupByLibrary.simpleMessage(""),
+    "servicesLink" : MessageLookupByLibrary.simpleMessage(""),
+    "servicesLinkIntro" : MessageLookupByLibrary.simpleMessage(""),
+    "servicesTitle" : MessageLookupByLibrary.simpleMessage(""),
     "shortSummary" : MessageLookupByLibrary.simpleMessage(""),
+    "showPreviewButton" : MessageLookupByLibrary.simpleMessage(""),
+    "socialLinkIntro" : MessageLookupByLibrary.simpleMessage(""),
     "title" : MessageLookupByLibrary.simpleMessage(""),
+    "tryItOutButton" : MessageLookupByLibrary.simpleMessage(""),
     "welcome" : m0
   };
 }
