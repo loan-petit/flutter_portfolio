@@ -15,7 +15,7 @@ class ResponsiveWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (SizeConfig.isPortrait && SizeConfig.isMobilePortrait) {
+    if (SizeConfig.isPortrait) {
       return portraitLayout;
     } else {
       return landscapeLayout;

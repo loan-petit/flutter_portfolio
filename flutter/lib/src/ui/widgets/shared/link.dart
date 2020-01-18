@@ -16,10 +16,6 @@ class Link extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextStyle labelTextStyle = (SizeConfig.isMobilePortrait)
-        ? Theme.of(context).textTheme.display1
-        : Theme.of(context).textTheme.headline;
-
     return GestureDetector(
       onTap: this.onTap,
       child: UnconstrainedBox(
@@ -36,7 +32,7 @@ class Link extends StatelessWidget {
           child: Text(
             this.label,
             textAlign: TextAlign.center,
-            style: labelTextStyle.apply(
+            style: Theme.of(context).textTheme.subhead.apply(
               color: Theme.of(context).colorScheme.primary,
               fontWeightDelta: 2,
             ),

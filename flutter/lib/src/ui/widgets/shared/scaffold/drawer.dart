@@ -6,8 +6,7 @@ import 'package:portfolio/src/utils/size_config.dart';
 
 /// Drawer for application triggered by click on the [AppBar] menu button.
 ///
-/// This drawer can only be revealed from devices with screen width inferior than
-/// 450px (mobiles for example).
+/// This drawer can only be revealed for portrait oriented devices.
 class AppDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -23,10 +22,8 @@ class AppDrawer extends StatelessWidget {
             },
             child: EmphasisedText(
               text: AppLocalization.of(context).title,
-              style: Theme.of(context)
-                  .textTheme
-                  .display3
-                  .apply(fontWeightDelta: 3),
+              style:
+                  Theme.of(context).textTheme.title.apply(fontWeightDelta: 3),
             ),
           ),
           SizedBox(height: 3 * SizeConfig.heightMultiplier),
@@ -66,7 +63,7 @@ class AppDrawer extends StatelessWidget {
                 alignment: Alignment.centerLeft,
                 child: Text(
                   title,
-                  style: Theme.of(context).textTheme.display2,
+                  style: Theme.of(context).textTheme.subhead,
                 ),
               ),
             ),

@@ -19,18 +19,19 @@ class AppScaffold extends StatefulWidget {
 }
 
 class _AppScaffoldState extends State<AppScaffold> {
-  /// Build the scaffold based on the widget properties and wrap the body
-  /// with the UI base.
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: _buildAppBar(),
       drawer: (SizeConfig.isPortrait) ? SafeArea(child: AppDrawer()) : null,
       body: SafeArea(
         child: Container(
           margin: (!SizeConfig.isPortrait)
               ? EdgeInsets.symmetric(
-                  horizontal: 10 * SizeConfig.widthMultiplier)
+                  horizontal: SizeConfig.bodyHorizontalMargin)
               : null,
           child: widget.body,
           alignment: Alignment.topCenter,
@@ -41,22 +42,25 @@ class _AppScaffoldState extends State<AppScaffold> {
 
   /// Create the [Scaffold]'s [AppBar].
   Widget _buildAppBar() {
-    TextStyle titleTextStyle = (SizeConfig.isPortrait)
-        ? Theme.of(context).textTheme.display2
-        : Theme.of(context).textTheme.headline;
-
-    TextStyle actionsTextStyle = Theme.of(context).textTheme.title;
+    TextStyle actionsTextStyle = Theme.of(context).textTheme.subhead;
 
     return AppBar(
-      iconTheme:
-          IconThemeData(color: Theme.of(context).colorScheme.onBackground),
+      leading: (SizeConfig.isPortrait) ? IconButton(
+        alignment: Alignment.center,
+        color: Theme.of(context).colorScheme.onBackground,
+        onPressed: () => _scaffoldKey.currentState.openDrawer(),
+        icon: Icon(
+          Icons.menu,
+          size: 2.5 * SizeConfig.textMultiplier,
+        ),
+      ): null,
       title: FlatButton(
         onPressed: () {
           Navigator.of(context).pushNamedAndRemoveUntil('/', (_) => false);
         },
         child: EmphasisedText(
           text: AppLocalization.of(context).title,
-          style: titleTextStyle.apply(fontWeightDelta: 3),
+          style: Theme.of(context).textTheme.title.apply(fontWeightDelta: 2),
         ),
       ),
       actions: (SizeConfig.isPortrait == false)

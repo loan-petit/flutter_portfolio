@@ -29,8 +29,8 @@ class ProfileHeader extends StatelessWidget {
         SizedBox(height: 4 * SizeConfig.heightMultiplier),
         EmphasisedText(
           text: AppLocalization.of(context).welcome(""),
-          style: Theme.of(context).textTheme.display4.apply(
-                fontWeightDelta: 3,
+          style: Theme.of(context).textTheme.display2.apply(
+                fontWeightDelta: 2,
               ),
         ),
         SizedBox(height: 8 * SizeConfig.heightMultiplier),
@@ -61,8 +61,8 @@ class ProfileHeader extends StatelessWidget {
               child: EmphasisedText(
                 text: AppLocalization.of(context).welcome("\n"),
                 textAlign: TextAlign.start,
-                style: Theme.of(context).textTheme.display4.apply(
-                      fontWeightDelta: 3,
+                style: Theme.of(context).textTheme.display2.apply(
+                      fontWeightDelta: 2,
                     ),
               ),
             ),
@@ -78,7 +78,7 @@ class ProfileHeader extends StatelessWidget {
   Widget _buildShortSummary(BuildContext context) {
     return EmphasisedText(
       text: AppLocalization.of(context).shortSummary,
-      style: Theme.of(context).textTheme.display2,
+      style: Theme.of(context).textTheme.title,
     );
   }
 }

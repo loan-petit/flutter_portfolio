@@ -18,7 +18,7 @@ class ServicesScreen extends StatelessWidget {
           children: <Widget>[
             EmphasisedText(
               text: AppLocalization.of(context).servicesTitle,
-              style: Theme.of(context).textTheme.display4.apply(
+              style: Theme.of(context).textTheme.display2.apply(
                     fontSizeFactor: 0.8,
                     fontWeightDelta: 3,
                   ),
@@ -27,14 +27,18 @@ class ServicesScreen extends StatelessWidget {
             EmphasisedText(
               text: AppLocalization.of(context).servicesDescription,
               textAlign: TextAlign.justify,
-              style: Theme.of(context).textTheme.display1,
+              style: Theme.of(context).textTheme.subhead,
             ),
-            SizedBox(height: 4 * SizeConfig.heightMultiplier),
+            Divider(
+              height: 6 * SizeConfig.heightMultiplier,
+              indent: 30 * SizeConfig.widthMultiplier,
+              endIndent: 30 * SizeConfig.widthMultiplier,
+              thickness: 2,
+              color: Theme.of(context).colorScheme.primary,
+            ),
             EmphasisedText(
-              text: AppLocalization.of(context).dailyAverageRate + '\n\n*350€*',
-              style: Theme.of(context).textTheme.display1.apply(
-                    fontSizeFactor: 0.8,
-                  ),
+              text: AppLocalization.of(context).dailyAverageRate + '\n*350€*',
+              style: Theme.of(context).textTheme.subhead,
             ),
           ],
         ),

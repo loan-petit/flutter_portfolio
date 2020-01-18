@@ -37,7 +37,7 @@ class Project extends StatelessWidget {
       children: <Widget>[
         EmphasisedText(
           text: this.name,
-          style: Theme.of(context).textTheme.display4.apply(
+          style: Theme.of(context).textTheme.display2.apply(
                 fontSizeFactor: 0.8,
                 fontWeightDelta: 3,
               ),
@@ -45,7 +45,7 @@ class Project extends StatelessWidget {
         SizedBox(height: 4 * SizeConfig.heightMultiplier),
         EmphasisedText(
           text: this.description,
-          style: Theme.of(context).textTheme.display1,
+          style: Theme.of(context).textTheme.subhead,
         ),
         SizedBox(height: 4 * SizeConfig.heightMultiplier),
         ResponsiveWidget(

@@ -7,6 +7,8 @@ class SizeConfig {
   static double _blockSizeHorizontal = 0;
   static double _blockSizeVertical = 0;
 
+  static double bodyHorizontalMargin = 0;
+
   static double textMultiplier;
   static double imageSizeMultiplier;
   static double heightMultiplier;
@@ -24,8 +26,9 @@ class SizeConfig {
         isMobilePortrait = true;
       }
     } else {
+      bodyHorizontalMargin = constraints.maxWidth / 5;
       _screenWidth = constraints.maxHeight;
-      _screenHeight = constraints.maxWidth;
+      _screenHeight = constraints.maxWidth - bodyHorizontalMargin * 2;
       isPortrait = false;
       isMobilePortrait = false;
     }

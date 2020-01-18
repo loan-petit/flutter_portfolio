@@ -10,25 +10,21 @@ import 'package:portfolio/src/utils/size_config.dart';
 class ProfileAdditionalInformations extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    TextStyle titleTextStyle = (SizeConfig.isPortrait)
-        ? Theme.of(context).textTheme.display2
-        : Theme.of(context).textTheme.display1;
-
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        _buildProjects(context, titleTextStyle),
+        _buildProjects(context),
         SizedBox(height: 5 * SizeConfig.heightMultiplier),
-        _buildServices(context, titleTextStyle),
+        _buildServices(context),
         SizedBox(height: 5 * SizeConfig.heightMultiplier),
-        _buildSocial(context, titleTextStyle),
+        _buildSocial(context),
       ],
     );
   }
 
   /// Build layout for the projects part.
-  Widget _buildProjects(BuildContext context, TextStyle titleTextStyle) {
+  Widget _buildProjects(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -36,7 +32,7 @@ class ProfileAdditionalInformations extends StatelessWidget {
         Text(
           AppLocalization.of(context).projectsLinkIntro,
           textAlign: TextAlign.center,
-          style: titleTextStyle,
+          style: Theme.of(context).textTheme.title,
         ),
         SizedBox(height: 2 * SizeConfig.heightMultiplier),
         Link(
@@ -50,7 +46,7 @@ class ProfileAdditionalInformations extends StatelessWidget {
   }
 
   /// Build layout for the services part.
-  Widget _buildServices(BuildContext context, TextStyle titleTextStyle) {
+  Widget _buildServices(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -58,7 +54,7 @@ class ProfileAdditionalInformations extends StatelessWidget {
         Text(
           AppLocalization.of(context).servicesLinkIntro,
           textAlign: TextAlign.center,
-          style: titleTextStyle,
+          style: Theme.of(context).textTheme.title,
         ),
         SizedBox(height: 2 * SizeConfig.heightMultiplier),
         Link(
@@ -72,10 +68,7 @@ class ProfileAdditionalInformations extends StatelessWidget {
   }
 
   /// Build layout for the social part.
-  Widget _buildSocial(
-    BuildContext context,
-    TextStyle titleTextStyle,
-  ) {
+  Widget _buildSocial(BuildContext context) {
     const String email = "petit.loan1@gmail.com";
 
     return Column(
@@ -84,7 +77,7 @@ class ProfileAdditionalInformations extends StatelessWidget {
       children: <Widget>[
         Text(
           AppLocalization.of(context).socialLinkIntro,
-          style: titleTextStyle,
+          style: Theme.of(context).textTheme.title,
         ),
         SizedBox(height: 2 * SizeConfig.heightMultiplier),
         Link(
