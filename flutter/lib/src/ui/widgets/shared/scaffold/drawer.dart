@@ -30,7 +30,7 @@ class AppDrawer extends StatelessWidget {
           _buildMenuItem(context, Icons.work,
               AppLocalization.of(context).servicesLink, '/services'),
           SizedBox(height: 2 * SizeConfig.heightMultiplier),
-          _buildMenuItem(context, Icons.folder,
+          _buildMenuItem(context, Icons.collections_bookmark,
               AppLocalization.of(context).projectsLink, '/projects'),
         ],
       ),

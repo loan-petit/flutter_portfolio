@@ -79,6 +79,26 @@ class AppLocalization {
 
   // Services localizations.
   String get servicesTitle => Intl.message('', name: 'servicesTitle');
+  String get applicationDevelopmentExpertiseTitle =>
+      Intl.message('', name: 'applicationDevelopmentExpertiseTitle');
+  String get applicationDevelopmentExpertiseSubtitle =>
+      Intl.message('', name: 'applicationDevelopmentExpertiseSubtitle');
+  String get devopsExpertiseTitle =>
+      Intl.message('', name: 'devopsExpertiseTitle');
+  String get devopsExpertiseSubtitle =>
+      Intl.message('', name: 'devopsExpertiseSubtitle');
+  String get chatbotDevelopmentExpertiseTitle =>
+      Intl.message('', name: 'chatbotDevelopmentExpertiseTitle');
+  String get chatbotDevelopmentExpertiseSubtitle =>
+      Intl.message('', name: 'chatbotDevelopmentExpertiseSubtitle');
+  String get backendDevelopmentExpertiseTitle =>
+      Intl.message('', name: 'backendDevelopmentExpertiseTitle');
+  String get backendDevelopmentExpertiseSubtitle =>
+      Intl.message('', name: 'backendDevelopmentExpertiseSubtitle');
+  String get consultingExpertiseTitle =>
+      Intl.message('', name: 'consultingExpertiseTitle');
+  String get consultingExpertiseSubtitle =>
+      Intl.message('', name: 'consultingExpertiseSubtitle');
   String get servicesDescription =>
       Intl.message('', name: 'servicesDescription');
   String get dailyAverageRate => Intl.message('', name: 'dailyAverageRate');

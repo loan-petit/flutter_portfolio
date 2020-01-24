@@ -34,18 +34,15 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
-      body: Padding(
-        padding: EdgeInsets.all(12.0),
-        child: ScrollNotifyingPageView(
-          scrollDirection: Axis.vertical,
-          pageSnapping: false,
-          notifier: _notifier,
-          controller: _pageController,
-          children: <Widget>[
-            _buildHeader(),
-            ProfileAdditionalInformations(),
-          ],
-        ),
+      body: ScrollNotifyingPageView(
+        scrollDirection: Axis.vertical,
+        pageSnapping: false,
+        notifier: _notifier,
+        controller: _pageController,
+        children: <Widget>[
+          _buildHeader(),
+          ProfileAdditionalInformations(),
+        ],
       ),
     );
   }

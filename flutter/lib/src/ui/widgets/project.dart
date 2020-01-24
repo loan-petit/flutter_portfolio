@@ -42,12 +42,12 @@ class Project extends StatelessWidget {
                 fontWeightDelta: 3,
               ),
         ),
-        SizedBox(height: 4 * SizeConfig.heightMultiplier),
+        SizedBox(height: 6 * SizeConfig.heightMultiplier),
         EmphasisedText(
           text: this.description,
           style: Theme.of(context).textTheme.subhead,
         ),
-        SizedBox(height: 4 * SizeConfig.heightMultiplier),
+        SizedBox(height: 6 * SizeConfig.heightMultiplier),
         ResponsiveWidget(
           portraitLayout: _buildPortraitLinks(context),
           landscapeLayout: _buildLandscapeLinks(context),

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/src/app_localizations.dart';
+import 'package:flutter/services.dart';
 
+import 'package:portfolio/src/app_localizations.dart';
+import 'package:portfolio/src/ui/widgets/expertise_grid.dart';
 import 'package:portfolio/src/ui/widgets/shared/emphasised_text.dart';
+import 'package:portfolio/src/ui/widgets/shared/link.dart';
 import 'package:portfolio/src/ui/widgets/shared/scaffold/index.dart';
 import 'package:portfolio/src/utils/size_config.dart';
 
@@ -10,8 +13,7 @@ class ServicesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
-      body: Padding(
-        padding: EdgeInsets.all(12.0),
+      body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -23,22 +25,26 @@ class ServicesScreen extends StatelessWidget {
                     fontWeightDelta: 3,
                   ),
             ),
-            SizedBox(height: 4 * SizeConfig.heightMultiplier),
+            SizedBox(height: 6 * SizeConfig.heightMultiplier),
+            ExpertiseGrid(),
+            SizedBox(height: 6 * SizeConfig.heightMultiplier),
             EmphasisedText(
               text: AppLocalization.of(context).servicesDescription,
               textAlign: TextAlign.justify,
               style: Theme.of(context).textTheme.subhead,
             ),
-            Divider(
-              height: 6 * SizeConfig.heightMultiplier,
-              indent: 30 * SizeConfig.widthMultiplier,
-              endIndent: 30 * SizeConfig.widthMultiplier,
-              thickness: 2,
-              color: Theme.of(context).colorScheme.primary,
+            SizedBox(height: 6 * SizeConfig.heightMultiplier),
+            Text(
+              AppLocalization.of(context).dailyAverageRate,
+              style:
+                  Theme.of(context).textTheme.subhead.apply(fontWeightDelta: 2),
             ),
-            EmphasisedText(
-              text: AppLocalization.of(context).dailyAverageRate + '\n*350€*',
-              style: Theme.of(context).textTheme.subhead,
+            Text(
+              '350€',
+              style: Theme.of(context)
+                  .textTheme
+                  .subhead
+                  .apply(color: Theme.of(context).colorScheme.primary),
             ),
           ],
         ),

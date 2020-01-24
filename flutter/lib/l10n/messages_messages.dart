@@ -23,7 +23,17 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
+    "applicationDevelopmentExpertiseSubtitle" : MessageLookupByLibrary.simpleMessage(""),
+    "applicationDevelopmentExpertiseTitle" : MessageLookupByLibrary.simpleMessage(""),
+    "backendDevelopmentExpertiseSubtitle" : MessageLookupByLibrary.simpleMessage(""),
+    "backendDevelopmentExpertiseTitle" : MessageLookupByLibrary.simpleMessage(""),
+    "chatbotDevelopmentExpertiseSubtitle" : MessageLookupByLibrary.simpleMessage(""),
+    "chatbotDevelopmentExpertiseTitle" : MessageLookupByLibrary.simpleMessage(""),
+    "consultingExpertiseSubtitle" : MessageLookupByLibrary.simpleMessage(""),
+    "consultingExpertiseTitle" : MessageLookupByLibrary.simpleMessage(""),
     "dailyAverageRate" : MessageLookupByLibrary.simpleMessage(""),
+    "devopsExpertiseSubtitle" : MessageLookupByLibrary.simpleMessage(""),
+    "devopsExpertiseTitle" : MessageLookupByLibrary.simpleMessage(""),
     "emailCopiedMessage" : MessageLookupByLibrary.simpleMessage(""),
     "homePageNavigationButtonLabel" : MessageLookupByLibrary.simpleMessage(""),
     "lifetoolsDescription" : MessageLookupByLibrary.simpleMessage(""),

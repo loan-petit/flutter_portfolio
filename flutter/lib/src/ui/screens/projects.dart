@@ -11,22 +11,19 @@ class ProjectsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
-      body: Padding(
-        padding: EdgeInsets.all(12.0),
-        child: PageView(
-          scrollDirection: Axis.vertical,
-          controller: _pageController,
-          children: <Widget>[
-            Project(
-              name: AppLocalization.of(context).lifetoolsName,
-              description: AppLocalization.of(context).lifetoolsDescription,
-              previewUri:
-                  "https://raw.githubusercontent.com/loan-petit/lifetools/media/app_preview.png",
-              githubUri: "https://github.com/loan-petit/lifetools",
-              demoUri: "",
-            ),
-          ],
-        ),
+      body: PageView(
+        scrollDirection: Axis.vertical,
+        controller: _pageController,
+        children: <Widget>[
+          Project(
+            name: AppLocalization.of(context).lifetoolsName,
+            description: AppLocalization.of(context).lifetoolsDescription,
+            previewUri:
+                "https://raw.githubusercontent.com/loan-petit/lifetools/media/app_preview.png",
+            githubUri: "https://github.com/loan-petit/lifetools",
+            demoUri: "",
+          ),
+        ],
       ),
     );
   }

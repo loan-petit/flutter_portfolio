@@ -7,7 +7,7 @@ class AppTheme {
   static const Brightness brightness = Brightness.light;
 
   static const Color primaryColor = Color.fromRGBO(247, 67, 64, 1);
-  static const Color backgroundColor = Color.fromRGBO(237, 242, 244, 1);
+  static const Color backgroundColor = Color.fromRGBO(249, 249, 249, 1);
   static const Color onBackgroundColor = Color.fromRGBO(56, 56, 56, 1);
 
   static const _colorScheme = ColorScheme(

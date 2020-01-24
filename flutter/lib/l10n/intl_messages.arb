@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2020-01-15T16:58:53.856324",
+  "@@last_modified": "2020-01-25T00:09:41.829254",
   "title": "",
   "@title": {
     "type": "text",
@@ -74,6 +74,56 @@
   },
   "servicesTitle": "",
   "@servicesTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "applicationDevelopmentExpertiseTitle": "",
+  "@applicationDevelopmentExpertiseTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "applicationDevelopmentExpertiseSubtitle": "",
+  "@applicationDevelopmentExpertiseSubtitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "devopsExpertiseTitle": "",
+  "@devopsExpertiseTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "devopsExpertiseSubtitle": "",
+  "@devopsExpertiseSubtitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "chatbotDevelopmentExpertiseTitle": "",
+  "@chatbotDevelopmentExpertiseTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "chatbotDevelopmentExpertiseSubtitle": "",
+  "@chatbotDevelopmentExpertiseSubtitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "backendDevelopmentExpertiseTitle": "",
+  "@backendDevelopmentExpertiseTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "backendDevelopmentExpertiseSubtitle": "",
+  "@backendDevelopmentExpertiseSubtitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "consultingExpertiseTitle": "",
+  "@consultingExpertiseTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "consultingExpertiseSubtitle": "",
+  "@consultingExpertiseSubtitle": {
     "type": "text",
     "placeholders": {}
   },

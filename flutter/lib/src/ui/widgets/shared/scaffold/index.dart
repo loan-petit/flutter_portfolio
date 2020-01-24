@@ -33,7 +33,7 @@ class _AppScaffoldState extends State<AppScaffold> {
               ? EdgeInsets.symmetric(
                   horizontal: SizeConfig.bodyHorizontalMargin)
               : null,
-          child: widget.body,
+          child: Padding(padding: EdgeInsets.all(3 * SizeConfig.heightMultiplier), child: widget.body),
           alignment: Alignment.topCenter,
         ),
       ),
@@ -42,18 +42,18 @@ class _AppScaffoldState extends State<AppScaffold> {
 
   /// Create the [Scaffold]'s [AppBar].
   Widget _buildAppBar() {
-    TextStyle actionsTextStyle = Theme.of(context).textTheme.subhead;
-
     return AppBar(
-      leading: (SizeConfig.isPortrait) ? IconButton(
-        alignment: Alignment.center,
-        color: Theme.of(context).colorScheme.onBackground,
-        onPressed: () => _scaffoldKey.currentState.openDrawer(),
-        icon: Icon(
-          Icons.menu,
-          size: 2.5 * SizeConfig.textMultiplier,
-        ),
-      ): null,
+      leading: (SizeConfig.isPortrait)
+          ? IconButton(
+              alignment: Alignment.center,
+              color: Theme.of(context).colorScheme.onBackground,
+              onPressed: () => _scaffoldKey.currentState.openDrawer(),
+              icon: Icon(
+                Icons.menu,
+                size: 2.5 * SizeConfig.textMultiplier,
+              ),
+            )
+          : null,
       title: FlatButton(
         onPressed: () {
           Navigator.of(context).pushNamedAndRemoveUntil('/', (_) => false);
@@ -72,7 +72,7 @@ class _AppScaffoldState extends State<AppScaffold> {
                 },
                 child: Text(
                   AppLocalization.of(context).servicesLink,
-                  style: actionsTextStyle,
+                  style: Theme.of(context).textTheme.subhead,
                 ),
               ),
               FlatButton(
@@ -82,7 +82,7 @@ class _AppScaffoldState extends State<AppScaffold> {
                 },
                 child: Text(
                   AppLocalization.of(context).projectsLink,
-                  style: actionsTextStyle,
+                  style: Theme.of(context).textTheme.subhead,
                 ),
               ),
               FlatButton(
@@ -100,7 +100,7 @@ class _AppScaffoldState extends State<AppScaffold> {
                   text: (AppLocalization.locale.languageCode == "en")
                       ? "*EN* / FR"
                       : "EN / *FR*",
-                  style: actionsTextStyle,
+                  style: Theme.of(context).textTheme.subhead,
                 ),
               ),
             ]
