@@ -7,8 +7,8 @@ services:
       context: ./nginx/
       args:
         APP_ENV: dev
-    image: loanpetit_nginx:latest
-    container_name: loanpetit_nginx
+    image: portfolio_nginx:latest
+    container_name: portfolio_nginx
     restart: always
     depends_on:
       - flutter
@@ -20,8 +20,8 @@ services:
       context: ./flutter/
       args:
         FLUTTER_VERSION: v1.14.0
-    image: loanpetit_flutter:latest
-    container_name: loanpetit_flutter
+    image: portfolio_flutter:latest
+    container_name: portfolio_flutter
     restart: always
     expose:
       - "80"

@@ -4,7 +4,7 @@ version: '3'
 services:
   nginx:
     image: petitloan/portfolio:nginx
-    container_name: loanpetit_nginx
+    container_name: portfolio_nginx
     restart: always
     depends_on:
       - certbot
@@ -19,14 +19,14 @@ services:
 
   flutter:
     image: petitloan/portfolio:flutter
-    container_name: loanpetit_flutter
+    container_name: portfolio_flutter
     restart: always
     expose:
       - "80"
 
   certbot:
     image: certbot/certbot
-    container_name: loanpetit_certbot
+    container_name: portfolio_certbot
     restart: always
     entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
     volumes:
