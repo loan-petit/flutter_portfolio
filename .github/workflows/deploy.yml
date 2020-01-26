@@ -1,0 +1,33 @@
+name: Deploy the application
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Build images
+        run: |
+          docker build -t petitloan/portfolio:flutter --build-arg FLUTTER_VERSION=v1.14.4 ./flutter/
+
+      - name: Login to Docker Hub
+        run: docker login --username ${{ secrets.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Push images to Docker Hub repository
+        run: |
+          docker push petitloan/portfolio:flutter
+
+      - name: Load AWS EC2 private key.
+        run: |
+          echo "${{ secrets.AWS_EC2_KEY }}" > ~/.aws_ec2_key.pem
+          chmod 600 ~/.aws_ec2_key.pem
+
+      - name: Deploy using Ansible playbook
+        run: ansible-playbook playbook.yml -i production --key-file=~/.aws_ec2_key.pem
+        working-directory: ./deploy/
