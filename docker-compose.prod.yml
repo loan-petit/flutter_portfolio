@@ -3,18 +3,14 @@ version: '3'
 
 services:
   nginx:
-    build: 
-      context: ./nginx/
-      args:
-        APP_ENV: prod
-    image: loanpetit_nginx:latest
+    image: petitloan/portfolio:nginx
     container_name: loanpetit_nginx
     restart: always
     depends_on:
       - certbot
       - flutter
     volumes:
-      - "certbot-conf:/etc/letsencrypt"
+      - "portfolio-certbot-conf:/etc/letsencrypt"
       - "certbot-www:/var/www/certbot"
     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
     ports:
@@ -22,11 +18,7 @@ services:
       - "443:443"
 
   flutter:
-    build: 
-      context: ./flutter/
-      args:
-        FLUTTER_VERSION: v1.14.0
-    image: loanpetit_flutter:latest
+    image: petitloan/portfolio:flutter
     container_name: loanpetit_flutter
     restart: always
     expose:
@@ -38,9 +30,10 @@ services:
     restart: always
     entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
     volumes:
-      - "certbot-conf:/etc/letsencrypt"
+      - "portfolio-certbot-conf:/etc/letsencrypt"
       - "certbot-www:/var/www/certbot"
 
 volumes:
-  certbot-conf:
+  portfolio-certbot-conf:
+    external: true
   certbot-www:
