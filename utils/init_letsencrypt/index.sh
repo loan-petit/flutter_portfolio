@@ -19,7 +19,7 @@ staging=0 # Set to 1 if you're testing your setup to avoid hitting request limit
 domains_path="/etc/letsencrypt/live/$domains"
 
 echo "### Downloading recommended TLS parameters..."
-docker run -v lifetools-certbot-conf:/etc/letsencrypt \
+docker run -v portfolio-certbot-conf:/etc/letsencrypt \
   -v "$(pwd)/utils/init_letsencrypt/install_tls_params.sh":/install_tls_params.sh \
   --rm alpine /bin/sh -c "/install_tls_params.sh && \
     mkdir -p \"/etc/letsencrypt/conf/live/$domains\" && \
