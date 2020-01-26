@@ -137,7 +137,6 @@ The following is the list of supported scopes:
 
 * **docker**
 * **nginx**
-* **prisma**
 * **flutter**
 * **certbot**
 
