@@ -47,8 +47,7 @@ class _PageNavigationButtonState extends State<PageNavigationButton> {
   }
 
   Widget _buildButton() {
-    return FlatButton(
-      hoverColor: Colors.transparent,
+    return GestureDetector(
       child: Column(
         children: <Widget>[
           if (SizeConfig.isMobilePortrait == false)
@@ -66,7 +65,7 @@ class _PageNavigationButtonState extends State<PageNavigationButton> {
           ),
         ],
       ),
-      onPressed: () {
+      onTap: () {
         widget.pageController.animateToPage(
           widget.pageController.page.toInt() + 1,
           duration: Duration(milliseconds: 300),

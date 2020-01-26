@@ -32,6 +32,15 @@ class AppDrawer extends StatelessWidget {
           SizedBox(height: 2 * SizeConfig.heightMultiplier),
           _buildMenuItem(context, Icons.collections_bookmark,
               AppLocalization.of(context).projectsLink, '/projects'),
+          Expanded(child: Container()),
+          Container(
+            padding: EdgeInsets.all(SizeConfig.heightMultiplier),
+            child: Text(
+              'Copyright © 2020, Loan PETIT. All rights reserved.',
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.caption,
+            ),
+          ),
         ],
       ),
     );

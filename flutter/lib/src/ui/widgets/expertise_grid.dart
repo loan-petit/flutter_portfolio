@@ -40,6 +40,7 @@ class ExpertiseGrid extends StatelessWidget {
         SizedBox(height: 4 * SizeConfig.heightMultiplier),
         IntrinsicHeight(
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               Expanded(
                 child: _buildGridItem(
@@ -98,7 +99,7 @@ class ExpertiseGrid extends StatelessWidget {
     String subtitle,
   }) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         Icon(

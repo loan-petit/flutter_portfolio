@@ -24,7 +24,7 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "applicationDevelopmentExpertiseSubtitle" : MessageLookupByLibrary.simpleMessage("Avec Flutter"),
-    "applicationDevelopmentExpertiseTitle" : MessageLookupByLibrary.simpleMessage("Développement web et mobile"),
+    "applicationDevelopmentExpertiseTitle" : MessageLookupByLibrary.simpleMessage("Développement mobile et web"),
     "backendDevelopmentExpertiseSubtitle" : MessageLookupByLibrary.simpleMessage("Avec GraphQL, Prisma et Node.js"),
     "backendDevelopmentExpertiseTitle" : MessageLookupByLibrary.simpleMessage("Développement backend"),
     "chatbotDevelopmentExpertiseSubtitle" : MessageLookupByLibrary.simpleMessage("Développement et déploiement sur les assistants vocaux"),

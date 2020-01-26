@@ -20,7 +20,7 @@
   "lifetoolsName": "Life*Tools*",
   "lifetoolsDescription": "LifeTools is a personal project created for *better management of daily habits and daily goals*. It helps you building and sticking to habits that matter to you. \n\nThis idea came from a lack of applications matching my expectations in daily routine management. \n\nLifeTools is still is in a very early stage. Some crucial features will be implemented over time. \n\nCurrently, this repository is open-sourced mostly to *showcase some of my technical skills*.",
   "servicesTitle": "My *services*",
-  "applicationDevelopmentExpertiseTitle": "Mobile & Web development",
+  "applicationDevelopmentExpertiseTitle": "Mobile and web development",
   "applicationDevelopmentExpertiseSubtitle": "With Flutter",
   "devopsExpertiseTitle": "DevOps",
   "devopsExpertiseSubtitle": "With Docker, GitHub Actions and Ansible",

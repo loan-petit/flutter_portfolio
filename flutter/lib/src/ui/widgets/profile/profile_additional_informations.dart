@@ -83,7 +83,7 @@ class ProfileAdditionalInformations extends StatelessWidget {
         Link(
           label: email,
           onTap: () async {
-            await Clipboard.setData(new ClipboardData(text: email));
+            await Clipboard.setData(ClipboardData(text: email));
             final snackBar = SnackBar(
               content: Text(
                 AppLocalization.of(context).emailCopiedMessage,

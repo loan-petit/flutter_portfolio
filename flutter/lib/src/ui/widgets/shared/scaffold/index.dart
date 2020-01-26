@@ -19,7 +19,7 @@ class AppScaffold extends StatefulWidget {
 }
 
 class _AppScaffoldState extends State<AppScaffold> {
-  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +27,19 @@ class _AppScaffoldState extends State<AppScaffold> {
       key: _scaffoldKey,
       appBar: _buildAppBar(),
       drawer: (SizeConfig.isPortrait) ? SafeArea(child: AppDrawer()) : null,
+      bottomNavigationBar: (!SizeConfig.isPortrait)
+          ? Container(
+              padding: EdgeInsets.only(
+                right: SizeConfig.widthMultiplier,
+                bottom: SizeConfig.heightMultiplier,
+              ),
+              child: Text(
+                'Copyright © 2020, Loan PETIT. All rights reserved.',
+                textAlign: TextAlign.end,
+                style: Theme.of(context).textTheme.caption,
+              ),
+            )
+          : null,
       body: SafeArea(
         child: Container(
           margin: (!SizeConfig.isPortrait)
