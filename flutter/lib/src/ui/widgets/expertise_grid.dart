@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+
 import 'package:portfolio/src/app_localizations.dart';
-import 'package:portfolio/src/ui/widgets/shared/responsive_widget.dart';
 import 'package:portfolio/src/utils/size_config.dart';
 
 /// Grid detailing my expertises.
@@ -25,7 +25,7 @@ class ExpertiseGrid extends StatelessWidget {
                       .applicationDevelopmentExpertiseSubtitle,
                 ),
               ),
-              SizedBox(width: 3 * SizeConfig.heightMultiplier),
+              SizedBox(width: 4 * SizeConfig.widthMultiplier),
               Expanded(
                 child: _buildGridItem(
                   context,
@@ -37,7 +37,7 @@ class ExpertiseGrid extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(height: 3 * SizeConfig.heightMultiplier),
+        SizedBox(height: 4 * SizeConfig.heightMultiplier),
         IntrinsicHeight(
           child: Row(
             children: <Widget>[
@@ -51,7 +51,7 @@ class ExpertiseGrid extends StatelessWidget {
                       .backendDevelopmentExpertiseSubtitle,
                 ),
               ),
-              SizedBox(width: 3 * SizeConfig.heightMultiplier),
+              SizedBox(width: 4 * SizeConfig.widthMultiplier),
               Expanded(
                 child: _buildGridItem(
                   context,

@@ -33,7 +33,9 @@ class _AppScaffoldState extends State<AppScaffold> {
               ? EdgeInsets.symmetric(
                   horizontal: SizeConfig.bodyHorizontalMargin)
               : null,
-          child: Padding(padding: EdgeInsets.all(3 * SizeConfig.heightMultiplier), child: widget.body),
+          child: Padding(
+              padding: EdgeInsets.all(3 * SizeConfig.heightMultiplier),
+              child: widget.body),
           alignment: Alignment.topCenter,
         ),
       ),
@@ -43,10 +45,12 @@ class _AppScaffoldState extends State<AppScaffold> {
   /// Create the [Scaffold]'s [AppBar].
   Widget _buildAppBar() {
     return AppBar(
+      iconTheme: IconThemeData(
+        color: Theme.of(context).colorScheme.onBackground,
+      ),
       leading: (SizeConfig.isPortrait)
           ? IconButton(
               alignment: Alignment.center,
-              color: Theme.of(context).colorScheme.onBackground,
               onPressed: () => _scaffoldKey.currentState.openDrawer(),
               icon: Icon(
                 Icons.menu,

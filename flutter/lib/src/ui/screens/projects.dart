@@ -21,7 +21,7 @@ class ProjectsScreen extends StatelessWidget {
             previewUri:
                 "https://raw.githubusercontent.com/loan-petit/lifetools/media/app_preview.png",
             githubUri: "https://github.com/loan-petit/lifetools",
-            demoUri: "",
+            demoUri: "https://lifetools.loanpetit.com/",
           ),
         ],
       ),
