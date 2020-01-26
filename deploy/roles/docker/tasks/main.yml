@@ -34,5 +34,5 @@
 - name: Assert that services are running
   assert:
     that:
-      - "nginx.lifetools_nginx.state.running"
-      - "flutter.lifetools_flutter.state.running"
+      - "nginx.portfolio_nginx.state.running"
+      - "flutter.portfolio_flutter.state.running"
