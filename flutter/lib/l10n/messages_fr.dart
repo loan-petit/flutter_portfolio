@@ -46,7 +46,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "servicesTitle" : MessageLookupByLibrary.simpleMessage("Mes *services*"),
     "shortSummary" : MessageLookupByLibrary.simpleMessage("Je suis un *développeur indépendant* passionné par les projets innovants, disruptifs et ambitieux."),
     "showPreviewButton" : MessageLookupByLibrary.simpleMessage("Afficher l\'aperçu"),
-    "socialLinkIntro" : MessageLookupByLibrary.simpleMessage("Je suis aussi sur les réseaux sociaux."),
+    "socialLinkIntro" : MessageLookupByLibrary.simpleMessage("Connectons-nous !"),
     "title" : MessageLookupByLibrary.simpleMessage("Loan *PETIT*"),
     "tryItOutButton" : MessageLookupByLibrary.simpleMessage("Tester"),
     "welcome" : m0

@@ -32,6 +32,22 @@ class AppDrawer extends StatelessWidget {
           SizedBox(height: 2 * SizeConfig.heightMultiplier),
           _buildMenuItem(context, Icons.collections_bookmark,
               AppLocalization.of(context).projectsLink, '/projects'),
+          SizedBox(height: 3 * SizeConfig.heightMultiplier),
+              FlatButton(
+                onPressed: () async {
+                  if (AppLocalization.locale.languageCode == "en") {
+                    await AppLocalization.setLocale(Locale("fr", ""));
+                  } else {
+                    await AppLocalization.setLocale(Locale("en", ""));
+                  }
+                },
+                child: EmphasisedText(
+                  text: (AppLocalization.locale.languageCode == "en")
+                      ? "*EN* / FR"
+                      : "EN / *FR*",
+                  style: Theme.of(context).textTheme.subhead,
+                ),
+              ),
           Expanded(child: Container()),
           Container(
             padding: EdgeInsets.all(SizeConfig.heightMultiplier),
