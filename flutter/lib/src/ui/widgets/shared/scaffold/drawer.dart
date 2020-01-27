@@ -18,7 +18,7 @@ class AppDrawer extends StatelessWidget {
           SizedBox(height: 2 * SizeConfig.heightMultiplier),
           FlatButton(
             onPressed: () {
-              Navigator.of(context).pushNamedAndRemoveUntil('/', (_) => false);
+              Navigator.of(context).pushNamed('/');
             },
             child: EmphasisedText(
               text: AppLocalization.of(context).title,
@@ -66,7 +66,7 @@ class AppDrawer extends StatelessWidget {
       BuildContext context, IconData icon, String title, String namedRoute) {
     return InkWell(
       onTap: () {
-        Navigator.pushReplacementNamed(context, namedRoute);
+        Navigator.of(context).pushNamed(namedRoute);
       },
       child: Container(
         height: 4 * SizeConfig.heightMultiplier,

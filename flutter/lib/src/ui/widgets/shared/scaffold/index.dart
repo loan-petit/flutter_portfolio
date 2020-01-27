@@ -61,6 +61,7 @@ class _AppScaffoldState extends State<AppScaffold> {
       iconTheme: IconThemeData(
         color: Theme.of(context).colorScheme.onBackground,
       ),
+      automaticallyImplyLeading: false,
       leading: (SizeConfig.isPortrait)
           ? IconButton(
               alignment: Alignment.center,
@@ -73,7 +74,7 @@ class _AppScaffoldState extends State<AppScaffold> {
           : null,
       title: FlatButton(
         onPressed: () {
-          Navigator.of(context).pushNamedAndRemoveUntil('/', (_) => false);
+          Navigator.of(context).pushNamed('/');
         },
         child: EmphasisedText(
           text: AppLocalization.of(context).title,
@@ -85,7 +86,7 @@ class _AppScaffoldState extends State<AppScaffold> {
               FlatButton(
                 onPressed: () {
                   Navigator.of(context)
-                      .pushNamedAndRemoveUntil('/services', (_) => false);
+                      .pushNamed('/services');
                 },
                 child: Text(
                   AppLocalization.of(context).servicesLink,
@@ -95,7 +96,7 @@ class _AppScaffoldState extends State<AppScaffold> {
               FlatButton(
                 onPressed: () {
                   Navigator.of(context)
-                      .pushNamedAndRemoveUntil('/projects', (_) => false);
+                      .pushNamed('/projects');
                 },
                 child: Text(
                   AppLocalization.of(context).projectsLink,

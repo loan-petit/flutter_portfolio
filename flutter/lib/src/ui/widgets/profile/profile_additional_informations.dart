@@ -38,7 +38,7 @@ class ProfileAdditionalInformations extends StatelessWidget {
         Link(
           label: AppLocalization.of(context).projectsLink,
           onTap: () {
-            Navigator.pushReplacementNamed(context, "/projects");
+            Navigator.pushNamed(context, "/projects");
           },
         ),
       ],
@@ -60,7 +60,7 @@ class ProfileAdditionalInformations extends StatelessWidget {
         Link(
           label: AppLocalization.of(context).servicesLink,
           onTap: () {
-            Navigator.pushReplacementNamed(context, "/services");
+            Navigator.pushNamed(context, "/services");
           },
         ),
       ],
