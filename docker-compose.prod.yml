@@ -12,7 +12,7 @@ services:
     volumes:
       - "portfolio-certbot-conf:/etc/letsencrypt"
       - "certbot-www:/var/www/certbot"
-    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+    command: "/bin/sh -c 'while :; do sleep 24h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
     ports:
       - "80:80"
       - "443:443"
@@ -28,7 +28,7 @@ services:
     image: certbot/certbot
     container_name: portfolio_certbot
     restart: always
-    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 72h & wait $${!}; done;'"
     volumes:
       - "portfolio-certbot-conf:/etc/letsencrypt"
       - "certbot-www:/var/www/certbot"
