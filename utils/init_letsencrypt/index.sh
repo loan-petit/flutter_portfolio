@@ -67,8 +67,7 @@ docker-compose -f docker-compose.prod.yml run --rm --entrypoint " \
     $email_arg \
     $domain_args \
     --rsa-key-size $rsa_key_size \
-    --agree-tos \
-    --force-renewal" certbot
+    --agree-tos" certbot
 echo
 
 echo "### Reloading nginx..."
