@@ -23,7 +23,7 @@ class AppDrawer extends StatelessWidget {
             child: EmphasisedText(
               text: AppLocalization.of(context).title,
               style:
-                  Theme.of(context).textTheme.title.apply(fontWeightDelta: 3),
+                  Theme.of(context).textTheme.title.apply(fontWeightDelta: 2),
             ),
           ),
           SizedBox(height: 3 * SizeConfig.heightMultiplier),
