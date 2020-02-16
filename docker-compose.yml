@@ -19,7 +19,7 @@ services:
     build: 
       context: ./flutter/
       args:
-        FLUTTER_VERSION: v1.14.0
+        FLUTTER_VERSION: v1.15.3
     image: portfolio_flutter:latest
     container_name: portfolio_flutter
     restart: always

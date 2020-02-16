@@ -1,0 +1,8 @@
+{
+  "name": "Loan PETIT",
+  "start_url": ".",
+  "display": "minimal-ui",
+  "description": "Portfolio app for Loan PETIT.",
+  "orientation": "portrait-primary",
+  "prefer_related_applications": false
+}
