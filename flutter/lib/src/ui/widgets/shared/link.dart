@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:portfolio/src/utils/size_config.dart';
-
 /// Create a stylized link with a [label] to an internal or external uri.
 ///
 /// On link tap the [onTap] callback is executed.
@@ -32,7 +30,7 @@ class Link extends StatelessWidget {
           child: Text(
             this.label,
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.subhead.apply(
+            style: Theme.of(context).textTheme.subtitle1.apply(
               color: Theme.of(context).colorScheme.primary,
               fontWeightDelta: 2,
             ),

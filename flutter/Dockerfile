@@ -4,7 +4,7 @@ FROM google/dart:latest as build-stage
 ARG FLUTTER_VERSION
 
 # Install unzip which is required for flutter doctor
-RUN apt-get update && apt-get install unzip
+RUN apt-get update && apt-get install zip unzip
 
 # Install and check Flutter
 ENV FLUTTER_ROOT ${HOME}/sdks/flutter
@@ -32,7 +32,7 @@ RUN pub get --offline
 RUN ./generate_localizable_strings.sh
 
 # Build client files which will be served by nginx
-RUN flutter build web -t lib/main_prod.dart
+RUN flutter build web
 
 # Stage 1, based on Nginx, to have only the compiled app, ready for production with Nginx
 FROM nginx:alpine

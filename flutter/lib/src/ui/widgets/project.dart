@@ -37,17 +37,17 @@ class Project extends StatelessWidget {
       children: <Widget>[
         EmphasisedText(
           text: this.name,
-          style: Theme.of(context).textTheme.display2.apply(
+          style: Theme.of(context).textTheme.headline3.apply(
                 fontSizeFactor: 0.8,
                 fontWeightDelta: 3,
               ),
         ),
-        SizedBox(height: 6 * SizeConfig.heightMultiplier),
+        SizedBox(height: 50 * SizeConfig.sizeMultiplier),
         EmphasisedText(
           text: this.description,
-          style: Theme.of(context).textTheme.subhead,
+          style: Theme.of(context).textTheme.subtitle1,
         ),
-        SizedBox(height: 6 * SizeConfig.heightMultiplier),
+        SizedBox(height: 50 * SizeConfig.sizeMultiplier),
         ResponsiveWidget(
           portraitLayout: _buildPortraitLinks(context),
           landscapeLayout: _buildLandscapeLinks(context),
@@ -69,12 +69,12 @@ class Project extends StatelessWidget {
             builder: (BuildContext context) => ImagePreview(this.previewUri),
           ),
         ),
-        SizedBox(height: 1 * SizeConfig.heightMultiplier),
+        SizedBox(height: 10 * SizeConfig.sizeMultiplier),
         Link(
           label: AppLocalization.of(context).tryItOutButton,
           onTap: () async => await launchUrl(this.demoUri),
         ),
-        SizedBox(height: 1 * SizeConfig.heightMultiplier),
+        SizedBox(height: 10 * SizeConfig.sizeMultiplier),
         Link(
           label: "GitHub",
           onTap: () async => await launchUrl(this.githubUri),

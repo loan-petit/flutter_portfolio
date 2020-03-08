@@ -30,8 +30,8 @@ class _AppScaffoldState extends State<AppScaffold> {
       bottomNavigationBar: (!SizeConfig.isPortrait)
           ? Container(
               padding: EdgeInsets.only(
-                right: SizeConfig.widthMultiplier,
-                bottom: SizeConfig.heightMultiplier,
+                right: 10 * SizeConfig.sizeMultiplier,
+                bottom: 10 * SizeConfig.sizeMultiplier,
               ),
               child: Text(
                 'Copyright © 2020, Loan PETIT. All rights reserved.',
@@ -47,7 +47,7 @@ class _AppScaffoldState extends State<AppScaffold> {
                   horizontal: SizeConfig.bodyHorizontalMargin)
               : null,
           child: Padding(
-              padding: EdgeInsets.all(3 * SizeConfig.heightMultiplier),
+              padding: EdgeInsets.all(25 * SizeConfig.sizeMultiplier),
               child: widget.body),
           alignment: Alignment.topCenter,
         ),
@@ -68,7 +68,7 @@ class _AppScaffoldState extends State<AppScaffold> {
               onPressed: () => _scaffoldKey.currentState.openDrawer(),
               icon: Icon(
                 Icons.menu,
-                size: 2.5 * SizeConfig.textMultiplier,
+                size: 20 * SizeConfig.sizeMultiplier,
               ),
             )
           : null,
@@ -78,29 +78,27 @@ class _AppScaffoldState extends State<AppScaffold> {
         },
         child: EmphasisedText(
           text: AppLocalization.of(context).title,
-          style: Theme.of(context).textTheme.title.apply(fontWeightDelta: 2),
+          style: Theme.of(context).textTheme.headline6.apply(fontWeightDelta: 2),
         ),
       ),
       actions: (SizeConfig.isPortrait == false)
           ? <Widget>[
               FlatButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed('/services');
+                  Navigator.of(context).pushNamed('/services');
                 },
                 child: Text(
                   AppLocalization.of(context).servicesLink,
-                  style: Theme.of(context).textTheme.subhead,
+                  style: Theme.of(context).textTheme.subtitle1,
                 ),
               ),
               FlatButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed('/projects');
+                  Navigator.of(context).pushNamed('/projects');
                 },
                 child: Text(
                   AppLocalization.of(context).projectsLink,
-                  style: Theme.of(context).textTheme.subhead,
+                  style: Theme.of(context).textTheme.subtitle1,
                 ),
               ),
               FlatButton(
@@ -118,7 +116,7 @@ class _AppScaffoldState extends State<AppScaffold> {
                   text: (AppLocalization.locale.languageCode == "en")
                       ? "*EN* / FR"
                       : "EN / *FR*",
-                  style: Theme.of(context).textTheme.subhead,
+                  style: Theme.of(context).textTheme.subtitle1,
                 ),
               ),
             ]

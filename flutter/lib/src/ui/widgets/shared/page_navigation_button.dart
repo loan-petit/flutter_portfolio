@@ -55,13 +55,13 @@ class _PageNavigationButtonState extends State<PageNavigationButton> {
               widget.label,
               style: Theme.of(context)
                   .textTheme
-                  .body2
+                  .bodyText1
                   .apply(color: Theme.of(context).colorScheme.primary),
             ),
           Icon(
             widget.icon,
             color: Theme.of(context).colorScheme.primary,
-            size: 4 * SizeConfig.textMultiplier,
+            size: 30 * SizeConfig.sizeMultiplier,
           ),
         ],
       ),

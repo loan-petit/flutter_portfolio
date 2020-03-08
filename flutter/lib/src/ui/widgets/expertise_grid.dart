@@ -25,7 +25,7 @@ class ExpertiseGrid extends StatelessWidget {
                       .applicationDevelopmentExpertiseSubtitle,
                 ),
               ),
-              SizedBox(width: 4 * SizeConfig.widthMultiplier),
+              SizedBox(width: 30 * SizeConfig.sizeMultiplier),
               Expanded(
                 child: _buildGridItem(
                   context,
@@ -37,7 +37,7 @@ class ExpertiseGrid extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(height: 4 * SizeConfig.heightMultiplier),
+        SizedBox(height: 30 * SizeConfig.sizeMultiplier),
         IntrinsicHeight(
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -52,7 +52,7 @@ class ExpertiseGrid extends StatelessWidget {
                       .backendDevelopmentExpertiseSubtitle,
                 ),
               ),
-              SizedBox(width: 4 * SizeConfig.widthMultiplier),
+              SizedBox(width: 30 * SizeConfig.sizeMultiplier),
               Expanded(
                 child: _buildGridItem(
                   context,
@@ -64,7 +64,7 @@ class ExpertiseGrid extends StatelessWidget {
                 ),
               ),
               if (!SizeConfig.isPortrait)
-                SizedBox(width: 3 * SizeConfig.heightMultiplier),
+                SizedBox(width: 25 * SizeConfig.sizeMultiplier),
               if (!SizeConfig.isPortrait)
                 Expanded(
                   child: _buildGridItem(
@@ -79,7 +79,7 @@ class ExpertiseGrid extends StatelessWidget {
           ),
         ),
         if (SizeConfig.isPortrait)
-          SizedBox(height: 3 * SizeConfig.heightMultiplier),
+          SizedBox(height: 25 * SizeConfig.sizeMultiplier),
         if (SizeConfig.isPortrait)
           _buildGridItem(
             context,
@@ -104,13 +104,13 @@ class ExpertiseGrid extends StatelessWidget {
       children: <Widget>[
         Icon(
           iconData,
-          size: 3 * SizeConfig.textMultiplier,
+          size: 25 * SizeConfig.sizeMultiplier,
           color: Theme.of(context).colorScheme.primary,
         ),
         Text(
           title,
           textAlign: TextAlign.center,
-          style: Theme.of(context).textTheme.title.apply(fontWeightDelta: 2),
+          style: Theme.of(context).textTheme.headline6.apply(fontWeightDelta: 2),
         ),
         Text(
           subtitle,

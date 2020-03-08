@@ -29,9 +29,9 @@ jobs:
       working-directory: ./flutter/
 
     - name: Build web app
-      run: flutter build web -t lib/main_prod.dart
+      run: flutter build web
       working-directory: ./flutter/
 
     - name: Build Android app
-      run: flutter build apk --split-per-abi -t lib/main_prod.dart
+      run: flutter build apk --split-per-abi
       working-directory: ./flutter/

@@ -15,7 +15,7 @@ jobs:
       - name: Build images
         run: |
           docker build -t petitloan/portfolio:nginx --build-arg APP_ENV=prod ./nginx/
-          docker build -t petitloan/portfolio:flutter --build-arg FLUTTER_VERSION=v1.15.3 ./flutter/
+          docker build -t petitloan/portfolio:flutter --build-arg FLUTTER_VERSION=v1.15.18 ./flutter/
 
       - name: Login to Docker Hub
         run: docker login --username ${{ secrets.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_PASSWORD }}

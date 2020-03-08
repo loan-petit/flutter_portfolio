@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/src/ui/widgets/shared/loading_screen.dart';
 
 import 'package:portfolio/src/utils/size_config.dart';
 
@@ -24,12 +23,12 @@ class ImagePreview extends StatelessWidget {
         ),
         GestureDetector(
           child: Container(
-            margin: EdgeInsets.all(1 * SizeConfig.widthMultiplier),
+            margin: EdgeInsets.all(10 * SizeConfig.sizeMultiplier),
             alignment: Alignment.topRight,
             child: Icon(
               Icons.close,
               color: Theme.of(context).colorScheme.onPrimary,
-              size: 3 * SizeConfig.textMultiplier,
+              size: 25 * SizeConfig.sizeMultiplier,
             ),
           ),
           onTap: () => Navigator.pop(context),

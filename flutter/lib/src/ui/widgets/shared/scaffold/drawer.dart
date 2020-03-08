@@ -15,7 +15,7 @@ class AppDrawer extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          SizedBox(height: 2 * SizeConfig.heightMultiplier),
+          SizedBox(height: 15 * SizeConfig.sizeMultiplier),
           FlatButton(
             onPressed: () {
               Navigator.of(context).pushNamed('/');
@@ -23,16 +23,16 @@ class AppDrawer extends StatelessWidget {
             child: EmphasisedText(
               text: AppLocalization.of(context).title,
               style:
-                  Theme.of(context).textTheme.title.apply(fontWeightDelta: 2),
+                  Theme.of(context).textTheme.headline6.apply(fontWeightDelta: 2),
             ),
           ),
-          SizedBox(height: 3 * SizeConfig.heightMultiplier),
+          SizedBox(height: 25 * SizeConfig.sizeMultiplier),
           _buildMenuItem(context, Icons.work,
               AppLocalization.of(context).servicesLink, '/services'),
-          SizedBox(height: 2 * SizeConfig.heightMultiplier),
+          SizedBox(height: 15 * SizeConfig.sizeMultiplier),
           _buildMenuItem(context, Icons.collections_bookmark,
               AppLocalization.of(context).projectsLink, '/projects'),
-          SizedBox(height: 3 * SizeConfig.heightMultiplier),
+          SizedBox(height: 25 * SizeConfig.sizeMultiplier),
               FlatButton(
                 onPressed: () async {
                   if (AppLocalization.locale.languageCode == "en") {
@@ -45,12 +45,12 @@ class AppDrawer extends StatelessWidget {
                   text: (AppLocalization.locale.languageCode == "en")
                       ? "*EN* / FR"
                       : "EN / *FR*",
-                  style: Theme.of(context).textTheme.subhead,
+                  style: Theme.of(context).textTheme.subtitle1,
                 ),
               ),
           Expanded(child: Container()),
           Container(
-            padding: EdgeInsets.all(SizeConfig.heightMultiplier),
+            padding: EdgeInsets.all(10 * SizeConfig.sizeMultiplier),
             child: Text(
               'Copyright © 2020, Loan PETIT. All rights reserved.',
               textAlign: TextAlign.center,
@@ -69,13 +69,13 @@ class AppDrawer extends StatelessWidget {
         Navigator.of(context).pushNamed(namedRoute);
       },
       child: Container(
-        height: 4 * SizeConfig.heightMultiplier,
-        padding: EdgeInsets.only(left: 3 * SizeConfig.widthMultiplier),
+        height: 30 * SizeConfig.sizeMultiplier,
+        padding: EdgeInsets.only(left: 15 * SizeConfig.sizeMultiplier),
         decoration: BoxDecoration(
           border: Border(
             left: BorderSide(
                 color: Theme.of(context).colorScheme.primary,
-                width: 1 * SizeConfig.widthMultiplier),
+                width: 5 * SizeConfig.sizeMultiplier),
           ),
         ),
         child: Row(
@@ -88,14 +88,14 @@ class AppDrawer extends StatelessWidget {
                 alignment: Alignment.centerLeft,
                 child: Text(
                   title,
-                  style: Theme.of(context).textTheme.subhead,
+                  style: Theme.of(context).textTheme.subtitle1,
                 ),
               ),
             ),
             Flexible(
               flex: 3,
               child: Padding(
-                padding: EdgeInsets.only(right: 3 * SizeConfig.widthMultiplier),
+                padding: EdgeInsets.only(right: 15 * SizeConfig.sizeMultiplier),
                 child: Icon(Icons.navigate_next),
               ),
             ),

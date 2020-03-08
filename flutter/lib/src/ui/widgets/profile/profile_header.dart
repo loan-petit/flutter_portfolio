@@ -22,18 +22,18 @@ class ProfileHeader extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         CircleAvatar(
-          radius: 18 * SizeConfig.imageSizeMultiplier,
+          radius: 100 * SizeConfig.sizeMultiplier,
           backgroundColor: Colors.transparent,
           backgroundImage: AssetImage('assets/png/profile.png'),
         ),
-        SizedBox(height: 4 * SizeConfig.heightMultiplier),
+        SizedBox(height: 30 * SizeConfig.sizeMultiplier),
         EmphasisedText(
           text: AppLocalization.of(context).welcome(""),
-          style: Theme.of(context).textTheme.display2.apply(
+          style: Theme.of(context).textTheme.headline3.apply(
                 fontWeightDelta: 2,
               ),
         ),
-        SizedBox(height: 8 * SizeConfig.heightMultiplier),
+        SizedBox(height: 60 * SizeConfig.sizeMultiplier),
         _buildShortSummary(context)
       ],
     );
@@ -51,7 +51,7 @@ class ProfileHeader extends StatelessWidget {
               child: Align(
                 alignment: Alignment.center,
                 child: CircleAvatar(
-                  radius: 12 * SizeConfig.imageSizeMultiplier,
+                  radius: 100 * SizeConfig.sizeMultiplier,
                   backgroundColor: Colors.transparent,
                   backgroundImage: AssetImage('assets/png/profile.png'),
                 ),
@@ -61,14 +61,14 @@ class ProfileHeader extends StatelessWidget {
               child: EmphasisedText(
                 text: AppLocalization.of(context).welcome("\n"),
                 textAlign: TextAlign.start,
-                style: Theme.of(context).textTheme.display2.apply(
+                style: Theme.of(context).textTheme.headline3.apply(
                       fontWeightDelta: 2,
                     ),
               ),
             ),
           ],
         ),
-        SizedBox(height: 10 * SizeConfig.heightMultiplier),
+        SizedBox(height: 80 * SizeConfig.sizeMultiplier),
         _buildShortSummary(context),
       ],
     );
@@ -78,7 +78,7 @@ class ProfileHeader extends StatelessWidget {
   Widget _buildShortSummary(BuildContext context) {
     return EmphasisedText(
       text: AppLocalization.of(context).shortSummary,
-      style: Theme.of(context).textTheme.title,
+      style: Theme.of(context).textTheme.headline6,
     );
   }
 }
