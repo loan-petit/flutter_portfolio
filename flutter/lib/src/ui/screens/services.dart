@@ -23,15 +23,15 @@ class ServicesScreen extends StatelessWidget {
                       fontWeightDelta: 3,
                     ),
               ),
-              SizedBox(height: 50 * SizeConfig.sizeMultiplier),
+              SizedBox(height: 6 * SizeConfig.heightMultiplier),
               ExpertiseGrid(),
-              SizedBox(height: 50 * SizeConfig.sizeMultiplier),
+              SizedBox(height: 6 * SizeConfig.heightMultiplier),
               EmphasisedText(
                 text: AppLocalization.of(context).servicesDescription,
                 textAlign: TextAlign.justify,
                 style: Theme.of(context).textTheme.subtitle1,
               ),
-              SizedBox(height: 50 * SizeConfig.sizeMultiplier),
+              SizedBox(height: 6 * SizeConfig.heightMultiplier),
               Text(
                 AppLocalization.of(context).dailyAverageRate,
                 style: Theme.of(context)

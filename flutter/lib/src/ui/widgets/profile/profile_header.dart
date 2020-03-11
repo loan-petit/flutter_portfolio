@@ -22,18 +22,18 @@ class ProfileHeader extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         CircleAvatar(
-          radius: 100 * SizeConfig.sizeMultiplier,
+          radius: 12 * SizeConfig.textMultiplier,
           backgroundColor: Colors.transparent,
           backgroundImage: AssetImage('assets/png/profile.png'),
         ),
-        SizedBox(height: 30 * SizeConfig.sizeMultiplier),
+        SizedBox(height: 4 * SizeConfig.heightMultiplier),
         EmphasisedText(
           text: AppLocalization.of(context).welcome(""),
           style: Theme.of(context).textTheme.headline3.apply(
                 fontWeightDelta: 2,
               ),
         ),
-        SizedBox(height: 60 * SizeConfig.sizeMultiplier),
+        SizedBox(height: 8 * SizeConfig.heightMultiplier),
         _buildShortSummary(context)
       ],
     );
@@ -51,7 +51,7 @@ class ProfileHeader extends StatelessWidget {
               child: Align(
                 alignment: Alignment.center,
                 child: CircleAvatar(
-                  radius: 100 * SizeConfig.sizeMultiplier,
+                  radius: 12 * SizeConfig.textMultiplier,
                   backgroundColor: Colors.transparent,
                   backgroundImage: AssetImage('assets/png/profile.png'),
                 ),
@@ -68,7 +68,7 @@ class ProfileHeader extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: 80 * SizeConfig.sizeMultiplier),
+        SizedBox(height: 10 * SizeConfig.heightMultiplier),
         _buildShortSummary(context),
       ],
     );

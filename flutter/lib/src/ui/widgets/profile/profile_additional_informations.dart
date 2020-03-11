@@ -15,9 +15,9 @@ class ProfileAdditionalInformations extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         _buildProjects(context),
-        SizedBox(height: 40 * SizeConfig.sizeMultiplier),
+        SizedBox(height: 5 * SizeConfig.heightMultiplier),
         _buildServices(context),
-        SizedBox(height: 40 * SizeConfig.sizeMultiplier),
+        SizedBox(height: 5 * SizeConfig.heightMultiplier),
         _buildSocial(context),
       ],
     );
@@ -34,7 +34,7 @@ class ProfileAdditionalInformations extends StatelessWidget {
           textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.headline6,
         ),
-        SizedBox(height: 15 * SizeConfig.sizeMultiplier),
+        SizedBox(height: 2 * SizeConfig.heightMultiplier),
         Link(
           label: AppLocalization.of(context).projectsLink,
           onTap: () {
@@ -54,9 +54,9 @@ class ProfileAdditionalInformations extends StatelessWidget {
         Text(
           AppLocalization.of(context).servicesLinkIntro,
           textAlign: TextAlign.center,
-          style: Theme.of(context).textTheme.headline6,
+          style: Theme.of(context).textTheme.headline6
         ),
-        SizedBox(height: 15 * SizeConfig.sizeMultiplier),
+        SizedBox(height: 2 * SizeConfig.heightMultiplier),
         Link(
           label: AppLocalization.of(context).servicesLink,
           onTap: () {
@@ -79,7 +79,7 @@ class ProfileAdditionalInformations extends StatelessWidget {
           AppLocalization.of(context).socialLinkIntro,
           style: Theme.of(context).textTheme.headline6,
         ),
-        SizedBox(height: 15 * SizeConfig.sizeMultiplier),
+        SizedBox(height: 2 * SizeConfig.heightMultiplier),
         Link(
           label: email,
           onTap: () async {
@@ -93,7 +93,7 @@ class ProfileAdditionalInformations extends StatelessWidget {
             Scaffold.of(context).showSnackBar(snackBar);
           },
         ),
-        SizedBox(height: 10 * SizeConfig.sizeMultiplier),
+        SizedBox(height: 1 * SizeConfig.heightMultiplier),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -102,7 +102,7 @@ class ProfileAdditionalInformations extends StatelessWidget {
               onTap: () async =>
                   await launchUrl('https://fr.linkedin.com/in/loanpetit'),
             ),
-            SizedBox(width: 10 * SizeConfig.sizeMultiplier),
+            SizedBox(width: 1 * SizeConfig.widthMultiplier),
             Link(
               label: "Github",
               onTap: () async =>

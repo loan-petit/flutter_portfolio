@@ -25,7 +25,7 @@ class ExpertiseGrid extends StatelessWidget {
                       .applicationDevelopmentExpertiseSubtitle,
                 ),
               ),
-              SizedBox(width: 30 * SizeConfig.sizeMultiplier),
+              SizedBox(width: 4 * SizeConfig.widthMultiplier),
               Expanded(
                 child: _buildGridItem(
                   context,
@@ -37,7 +37,7 @@ class ExpertiseGrid extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(height: 30 * SizeConfig.sizeMultiplier),
+        SizedBox(height: 4 * SizeConfig.heightMultiplier),
         IntrinsicHeight(
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -52,7 +52,7 @@ class ExpertiseGrid extends StatelessWidget {
                       .backendDevelopmentExpertiseSubtitle,
                 ),
               ),
-              SizedBox(width: 30 * SizeConfig.sizeMultiplier),
+              SizedBox(width: 4 * SizeConfig.widthMultiplier),
               Expanded(
                 child: _buildGridItem(
                   context,
@@ -64,7 +64,7 @@ class ExpertiseGrid extends StatelessWidget {
                 ),
               ),
               if (!SizeConfig.isPortrait)
-                SizedBox(width: 25 * SizeConfig.sizeMultiplier),
+                SizedBox(width: 3 * SizeConfig.heightMultiplier),
               if (!SizeConfig.isPortrait)
                 Expanded(
                   child: _buildGridItem(
@@ -79,7 +79,7 @@ class ExpertiseGrid extends StatelessWidget {
           ),
         ),
         if (SizeConfig.isPortrait)
-          SizedBox(height: 25 * SizeConfig.sizeMultiplier),
+          SizedBox(height: 3 * SizeConfig.heightMultiplier),
         if (SizeConfig.isPortrait)
           _buildGridItem(
             context,
@@ -104,7 +104,7 @@ class ExpertiseGrid extends StatelessWidget {
       children: <Widget>[
         Icon(
           iconData,
-          size: 25 * SizeConfig.sizeMultiplier,
+          size: 3 * SizeConfig.textMultiplier,
           color: Theme.of(context).colorScheme.primary,
         ),
         Text(

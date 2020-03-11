@@ -30,8 +30,8 @@ class _AppScaffoldState extends State<AppScaffold> {
       bottomNavigationBar: (!SizeConfig.isPortrait)
           ? Container(
               padding: EdgeInsets.only(
-                right: 10 * SizeConfig.sizeMultiplier,
-                bottom: 10 * SizeConfig.sizeMultiplier,
+                right: SizeConfig.widthMultiplier,
+                bottom: SizeConfig.heightMultiplier,
               ),
               child: Text(
                 'Copyright © 2020, Loan PETIT. All rights reserved.',
@@ -47,7 +47,7 @@ class _AppScaffoldState extends State<AppScaffold> {
                   horizontal: SizeConfig.bodyHorizontalMargin)
               : null,
           child: Padding(
-              padding: EdgeInsets.all(25 * SizeConfig.sizeMultiplier),
+              padding: EdgeInsets.all(3 * SizeConfig.heightMultiplier),
               child: widget.body),
           alignment: Alignment.topCenter,
         ),
@@ -68,7 +68,7 @@ class _AppScaffoldState extends State<AppScaffold> {
               onPressed: () => _scaffoldKey.currentState.openDrawer(),
               icon: Icon(
                 Icons.menu,
-                size: 20 * SizeConfig.sizeMultiplier,
+                size: 2.5 * SizeConfig.textMultiplier,
               ),
             )
           : null,
@@ -78,7 +78,8 @@ class _AppScaffoldState extends State<AppScaffold> {
         },
         child: EmphasisedText(
           text: AppLocalization.of(context).title,
-          style: Theme.of(context).textTheme.headline6.apply(fontWeightDelta: 2),
+          style:
+              Theme.of(context).textTheme.headline6.apply(fontWeightDelta: 2),
         ),
       ),
       actions: (SizeConfig.isPortrait == false)

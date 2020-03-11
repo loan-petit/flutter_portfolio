@@ -23,12 +23,12 @@ class ImagePreview extends StatelessWidget {
         ),
         GestureDetector(
           child: Container(
-            margin: EdgeInsets.all(10 * SizeConfig.sizeMultiplier),
+            margin: EdgeInsets.all(1 * SizeConfig.widthMultiplier),
             alignment: Alignment.topRight,
             child: Icon(
               Icons.close,
               color: Theme.of(context).colorScheme.onPrimary,
-              size: 25 * SizeConfig.sizeMultiplier,
+              size: 3 * SizeConfig.textMultiplier,
             ),
           ),
           onTap: () => Navigator.pop(context),

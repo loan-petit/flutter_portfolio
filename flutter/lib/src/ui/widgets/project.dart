@@ -42,12 +42,12 @@ class Project extends StatelessWidget {
                 fontWeightDelta: 3,
               ),
         ),
-        SizedBox(height: 50 * SizeConfig.sizeMultiplier),
+        SizedBox(height: 6 * SizeConfig.heightMultiplier),
         EmphasisedText(
           text: this.description,
           style: Theme.of(context).textTheme.subtitle1,
         ),
-        SizedBox(height: 50 * SizeConfig.sizeMultiplier),
+        SizedBox(height: 6 * SizeConfig.heightMultiplier),
         ResponsiveWidget(
           portraitLayout: _buildPortraitLinks(context),
           landscapeLayout: _buildLandscapeLinks(context),
@@ -69,12 +69,12 @@ class Project extends StatelessWidget {
             builder: (BuildContext context) => ImagePreview(this.previewUri),
           ),
         ),
-        SizedBox(height: 10 * SizeConfig.sizeMultiplier),
+        SizedBox(height: 1 * SizeConfig.heightMultiplier),
         Link(
           label: AppLocalization.of(context).tryItOutButton,
           onTap: () async => await launchUrl(this.demoUri),
         ),
-        SizedBox(height: 10 * SizeConfig.sizeMultiplier),
+        SizedBox(height: 1 * SizeConfig.heightMultiplier),
         Link(
           label: "GitHub",
           onTap: () async => await launchUrl(this.githubUri),

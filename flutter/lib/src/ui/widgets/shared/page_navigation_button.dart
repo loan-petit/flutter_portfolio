@@ -61,7 +61,7 @@ class _PageNavigationButtonState extends State<PageNavigationButton> {
           Icon(
             widget.icon,
             color: Theme.of(context).colorScheme.primary,
-            size: 30 * SizeConfig.sizeMultiplier,
+            size: 4 * SizeConfig.textMultiplier,
           ),
         ],
       ),

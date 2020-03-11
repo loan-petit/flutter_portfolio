@@ -15,7 +15,7 @@ class AppDrawer extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          SizedBox(height: 15 * SizeConfig.sizeMultiplier),
+          SizedBox(height: 2 * SizeConfig.heightMultiplier),
           FlatButton(
             onPressed: () {
               Navigator.of(context).pushNamed('/');
@@ -26,13 +26,13 @@ class AppDrawer extends StatelessWidget {
                   Theme.of(context).textTheme.headline6.apply(fontWeightDelta: 2),
             ),
           ),
-          SizedBox(height: 25 * SizeConfig.sizeMultiplier),
+          SizedBox(height: 3 * SizeConfig.heightMultiplier),
           _buildMenuItem(context, Icons.work,
               AppLocalization.of(context).servicesLink, '/services'),
-          SizedBox(height: 15 * SizeConfig.sizeMultiplier),
+          SizedBox(height: 2 * SizeConfig.heightMultiplier),
           _buildMenuItem(context, Icons.collections_bookmark,
               AppLocalization.of(context).projectsLink, '/projects'),
-          SizedBox(height: 25 * SizeConfig.sizeMultiplier),
+          SizedBox(height: 3 * SizeConfig.heightMultiplier),
               FlatButton(
                 onPressed: () async {
                   if (AppLocalization.locale.languageCode == "en") {
@@ -50,7 +50,7 @@ class AppDrawer extends StatelessWidget {
               ),
           Expanded(child: Container()),
           Container(
-            padding: EdgeInsets.all(10 * SizeConfig.sizeMultiplier),
+            padding: EdgeInsets.all(SizeConfig.heightMultiplier),
             child: Text(
               'Copyright © 2020, Loan PETIT. All rights reserved.',
               textAlign: TextAlign.center,
@@ -69,13 +69,13 @@ class AppDrawer extends StatelessWidget {
         Navigator.of(context).pushNamed(namedRoute);
       },
       child: Container(
-        height: 30 * SizeConfig.sizeMultiplier,
-        padding: EdgeInsets.only(left: 15 * SizeConfig.sizeMultiplier),
+        height: 4 * SizeConfig.heightMultiplier,
+        padding: EdgeInsets.only(left: 3 * SizeConfig.widthMultiplier),
         decoration: BoxDecoration(
           border: Border(
             left: BorderSide(
                 color: Theme.of(context).colorScheme.primary,
-                width: 5 * SizeConfig.sizeMultiplier),
+                width: 1 * SizeConfig.widthMultiplier),
           ),
         ),
         child: Row(
@@ -95,7 +95,7 @@ class AppDrawer extends StatelessWidget {
             Flexible(
               flex: 3,
               child: Padding(
-                padding: EdgeInsets.only(right: 15 * SizeConfig.sizeMultiplier),
+                padding: EdgeInsets.only(right: 3 * SizeConfig.widthMultiplier),
                 child: Icon(Icons.navigate_next),
               ),
             ),
